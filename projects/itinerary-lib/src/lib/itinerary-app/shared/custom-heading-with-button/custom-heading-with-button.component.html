@@ -1,0 +1,10 @@
+<div [class]="cssClass + ' flex flex-row justify-between items-center mb-5'">
+  <h4 class="heading">{{ heading }}</h4>
+  <button
+    class="iconButton flex flex-row items-center"
+    (click)="buttonClick.emit()"
+  >
+    <img class="inline" [ngSrc]="buttonIcon" height="12" width="13" />
+    <p class="inline">{{ buttonText }}</p>
+  </button>
+</div>

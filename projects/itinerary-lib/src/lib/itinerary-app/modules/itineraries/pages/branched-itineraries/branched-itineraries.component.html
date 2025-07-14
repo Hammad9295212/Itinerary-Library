@@ -1,0 +1,30 @@
+<div class="ps-5 pe-5">
+  <app-header
+    (firstButton)="back()"
+    [heading]="'BRANCHED.FORKED_ITINERARIES' | translate"
+  ></app-header>
+
+  <lib-secondary-btn >
+    <div class="flex items-center justify-center">
+      <img class="branchIcon me-1" [src]="ICONS['branchPink']" alt="icon" />
+      <span class="me-1">
+        {{ "BRANCHED.FORK_THE_ITINERARY" | translate }}
+      </span>
+    </div>
+  </lib-secondary-btn>
+
+  <app-filter-menu [ngStyle]="{ margin: '0px !important' }"></app-filter-menu>
+  <ng-container *ngFor="let t of temps">
+    <app-cutom-card
+      [libMenuItem]="libMenuItem"
+      [isDraft]="false"
+      [itineraryStarted]="true"
+      (TitleClicked)="navToDetail()"
+      (forkClicked)="navToBranchItinerary(t)"
+      (messageClicked)="navToComment()"
+      (userProfileClicked)="navToMoreDetail()"
+      (imageClicked)="navToStories()"
+      (eyeClicked)="navToWatching()"
+    ></app-cutom-card>
+  </ng-container>
+</div>

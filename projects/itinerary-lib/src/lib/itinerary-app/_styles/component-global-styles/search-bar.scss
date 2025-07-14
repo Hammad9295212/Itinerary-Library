@@ -1,0 +1,17 @@
+.search-field .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  width: 100%;
+  margin: 0px;
+  position: relative;
+  padding: 6px;
+  min-width: 100%;
+}
+
+.container__search-bar__icon.container__search-bar__search-icon {
+  position: absolute;
+  right: 6%;
+  top: 39%;
+}

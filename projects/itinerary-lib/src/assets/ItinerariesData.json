@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Ginyaki",
+    "description": "Chinese Restaurant",
+    "distance": "45 minutes",
+    "distanceValue": "6.6 Km",
+    "location": "4 Places",
+    "icon": "startMarkerImage",
+    "startLocation": "startLocation"
+  },
+  {
+    "name": "Kabul tikka",
+    "description": "Afghan Cuisine",
+    "distance": "45 minutes",
+    "distanceValue": "6.6 Km",
+    "location": "4 Places",
+    "icon": "restu",
+    "startLocation": "enLocation"
+  },
+  {
+    "name": "Quetta TNT",
+    "description": "Tea Cofee",
+    "distance": "45 minutes",
+    "distanceValue": "6.6 Km",
+    "location": "4 Places",
+    "icon": "enLocation",
+    "startLocation": "enLocation"
+  }
+]

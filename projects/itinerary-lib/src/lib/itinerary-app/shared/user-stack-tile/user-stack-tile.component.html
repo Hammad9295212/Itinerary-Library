@@ -1,0 +1,15 @@
+<div [ngClass]="class" class="mt-3">
+  <div class="mb-2 text-xs userIconText">
+    <p>{{ label }}</p>
+  </div>
+  <div class="flex justify-between items-center relative">
+    <app-users-stack [images]="images" [maxVisible]="maxVisible" [size]="size"
+      [isSelectableVisible]="isSelectableVisible" [selectableOption]="selectableOption"></app-users-stack>
+    <div class="flex">
+      <button class="pinkTextColor" (click)="handleBtnClick()">
+        {{ buttonText }}
+      </button>
+      <p class="px-1 text-white">></p>
+    </div>
+  </div>
+</div>

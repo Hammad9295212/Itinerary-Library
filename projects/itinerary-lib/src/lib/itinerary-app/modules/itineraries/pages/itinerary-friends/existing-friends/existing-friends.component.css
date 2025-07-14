@@ -1,0 +1,46 @@
+.commonInterests {
+  font-family: "Calistoga";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.692px;
+  line-height: 160%;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.commonInterestItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.641px 13.128px 1.641px 1.641px;
+  gap: 6.56px;
+  background: #f7f5dd;
+  box-shadow:
+    -1.641px -1.641px 10.6665px rgba(255, 255, 255, 0.5),
+    3.282px 3.282px 6.564px rgba(0, 0, 0, 0.89);
+  border-radius: 82.05px;
+  width: 27.9px;
+  height: 27.9px;
+  border-radius: 30px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  width: 90px;
+  height: 30px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.487px;
+  line-height: 160%;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.selectable-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,119 @@
+<div class="carousel-container w-full">
+  <div class="carousel">
+    <lib-image-deck [index]="1" class="imageSize" [images]="images"></lib-image-deck>
+    <div class="card active bg-cover bg-center bg-no-repeat story-img"
+      style="position: absolute; top: 20px; background: transparent; z-index: 1;">
+      <div class="flex justify-between">
+        <div class="flex">
+          <div class="items-start justify-between gap-5 px-4 py-4">
+            <button (click)="goBack()">
+              <img loading="lazy" [src]="ICONS['back']" alt="Back" />
+            </button>
+          </div>
+          <h5 class="text-secondary opacity-80 text-[10px] xs:text-[9px] flex gap-[6px] items-center">
+            <img loading="lazy" [src]="ICONS['userReal']" alt="User" />
+            <span>{{ processedCardData?.userName }} </span>
+            <img loading="lazy" [src]="ICONS['king']" alt="Favorite" />
+          </h5>
+        </div>
+        <div class="gap-5 px-4 py-4">
+          <lib-menu-btn (select)="handleMenueItemSelect()" (click)="handleMenuClick()" (change)="handleMenuItemChange()"
+            class="lib-menu-custom-class lib-menu-bg-none" [disableTextShadow]="true" [menuItems]="libMenuItem">
+            <img loading="lazy" [src]="ICONS['horizontalWhite']" alt="--------" />
+          </lib-menu-btn>
+        </div>
+      </div>
+
+      <div class="flex px-4">
+        <div class="progress-bar"></div>
+        <div class="progress-bar"></div>
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="py-2 px-4">
+        <div class="flex  items-start story-content">
+          <div class="items-center sm:text-[10px] xs:text-[9px] flex flex-col gap-y-[0px] px-4 py-2">
+            <img loading="lazy" [src]="ICONS['upvote']" alt="Upvote" />
+            <span [class]="!isDraft ? 'text-primary' : 'drah-voter-header'">
+              {{ processedCardData?.upVotes }}
+            </span>
+            <img loading="lazy" [src]="ICONS['downvote']" alt="Downvote" />
+          </div>
+          <div class="py-4">
+            <h5 class="text-secondary mb-3 opacity-80 text-[20px] xs:text-[15px] flex gap-[6px] items-center">
+              <img loading="lazy" class="story-avatar" [src]="ICONS['userReal']" alt="User" />
+              <span>{{ processedCardData?.userName }} </span>
+              <img loading="lazy" [src]="ICONS['king']" alt="Favorite" />
+            </h5>
+
+            <p class="story-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+              <span class="read-more-text">Read More</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex custom-padding items-start justify-end">
+          <div>
+            <div class="py-2 flex flex-col items-center">
+              <img loading="lazy" [src]="ICONS['upvoteWhite']" alt="Upvote" />
+              <span class="votes-Count">
+                {{ processedCardData?.upVotes }}
+              </span>
+              <img loading="lazy" [src]="ICONS['downvoteWhite']" alt="Downvote" />
+            </div>
+
+            <div class="py-2 flex flex-col items-center">
+              <img loading="lazy" class="py-2" [src]="ICONS['message']" alt="Upvote" />
+              <span class="votes-Count"> 23 </span>
+            </div>
+
+            <div class="py-2 flex flex-col items-center">
+              <img loading="lazy" class="py-2" [src]="ICONS['forward']" alt="Upvote" />
+              <span class="votes-Count"> Share </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-white absolute bottom-[-60px] w-full">
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold story-title py-2">Adventure Tour</h2>
+            <div class="py-2">
+              <h5 class="text-secondary opacity-80 text-[10px] xs:text-[9px] flex gap-[6px] items-center">
+                <img loading="lazy" [src]="ICONS['userReal']" alt="User" />
+                <span>{{ processedCardData?.userName }} -
+                  {{ processedCardData?.timeAgo }}</span>
+              </h5>
+            </div>
+          </div>
+          <div class="flex items-start justify-between w-full">
+            <!-- Left-aligned div -->
+            <div class="flex space-x-4 justify-start">
+              <span class="story-bottom-buttons-pink"><img loading="lazy" [src]="ICONS['temp']" alt="Place" />
+                Palace</span>
+              <span class="story-bottom-buttons-white"><img loading="lazy" [src]="ICONS['coffee']" alt="Coffee" />
+                Coffee</span>
+              <span class="story-bottom-buttons-white"><img loading="lazy" [src]="ICONS['template']" alt="Temple" />
+                Temple</span>
+              <span class="story-bottom-buttons-white">More +6</span>
+            </div>
+
+            <!-- Right-aligned div -->
+            <div class="flex justify-end items-end px-6">
+              <div class="flex">
+                <div class="flex items-end gap-x-2">
+                  <span class="text-xs userIconText">
+                    {{ processedCardData?.users }}
+                    <span class="user-icon-text" *ngIf="processedCardData && processedCardData!.users > 0">Users</span>
+                  </span>
+                  <img loading="lazy" [src]="processedCardData?.userimageSrc" alt="UserPic" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

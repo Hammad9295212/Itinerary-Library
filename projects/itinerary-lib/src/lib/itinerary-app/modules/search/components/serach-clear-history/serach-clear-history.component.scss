@@ -1,0 +1,26 @@
+@use "../../../../_styles/colors" as *;
+
+.search-sub-heading {
+  color: $text-color-4;
+}
+
+.clear-history-main {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 0px;
+  width: 100px;
+  margin-top: 10px;
+  font-weight: lighter;
+  position: relative;
+  font-size: 13px !important;
+}
+
+.clearHistoryMain span {
+  margin-bottom: 2px;
+}
+
+.clear-history-label {
+  font-size: var(--font-size-medium);
+}

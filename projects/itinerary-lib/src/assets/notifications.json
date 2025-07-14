@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "userProfile": "assets/images/user.png",
+    "notificationContent": "Jonathan edited their featured comment on your itinerary <span>Adventuretour</span>. Kindly review the comment to make it live.",
+    "dateTime": "11 hours ago",
+    "attended": false
+  },
+  {
+    "id": "2",
+    "userProfile": "assets/images/user.png",
+    "notificationContent": "Chandler is now watching your itinerary <span>Adventuretour</span>.",
+    "dateTime": "5 hours ago",
+    "attended": true
+  },
+  {
+    "id": "3",
+    "userProfile": "assets/images/user.png",
+    "notificationContent": "Any other relevant notification here.",
+    "dateTime": "11 hours ago",
+    "attended": true
+  }
+]

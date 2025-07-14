@@ -1,0 +1,32 @@
+.custom-flat-button {
+    display: flex;
+	color: var(--secondary-color);
+	background-color: transparent;
+	border: 2px solid transparent;
+	border-radius: 2px;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	outline: none;
+	cursor: pointer;
+	align-items: center;
+	transition: width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out, color 0.15s ease-out, opacity 0.15s ease-out;
+    padding: 8px 16px;
+    border-radius: var(--lib-button-border-radius, 30.582px);
+
+	&:active {
+        border: 2px solid var(--cyrano-pink-shade-1);
+    }
+		
+	&[disabled]:not([disabled=false]), &[soft-disabled]:not([soft-disabled=false]) {
+        pointer-events: none !important;
+		opacity: 0.5;
+    }	
+}
+
+.custom-flat-button-highlighted-font {
+    @extend .custom-flat-button; 
+    color: var(--cyrano-pink-shade-1);
+}

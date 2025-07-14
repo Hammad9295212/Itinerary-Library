@@ -1,0 +1,22 @@
+{
+  "initialLocation": {
+    "lat": 24.8607,
+    "lng": 67.0011
+  },
+  "markers": [
+    {
+      "id": "2",
+      "icon": {
+        "url": "path/to/startMarkerImage.png",
+        "size": { "width": 40, "height": 40 },
+        "scaledSize": { "width": 30, "height": 30 }
+      },
+      "position": {
+        "lat": 24.9607,
+        "lng": 67.9011
+      },
+      "radius": 100,
+      "omitMarkerCircle": true
+    }
+  ]
+}

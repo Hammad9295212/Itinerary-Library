@@ -1,0 +1,15 @@
+::ng-deep .mat-mdc-tab-links {
+  gap: 0px !important;
+}
+
+::ng-deep .mdc-tab {
+  padding: 0px !important;
+}
+
+::ng-deep .mdc-tab__text-label {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-size: 13.13px;
+  line-height: 160%;
+  letter-spacing: 0%;
+}

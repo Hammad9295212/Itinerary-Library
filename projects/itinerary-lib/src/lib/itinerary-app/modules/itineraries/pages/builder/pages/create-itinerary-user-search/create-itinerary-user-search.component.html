@@ -1,0 +1,68 @@
+<app-header heading="User Search" (firstButton)="back()"></app-header>
+<div class="p-4">
+  <lib-text-box
+    class="textbox-1"
+    label="Invite people to this place"
+  ></lib-text-box>
+
+  <h3 class="font-Calistoga text-lg mt-3 mb-3">Total Users</h3>
+  <p>4 people</p>
+
+  <ng-container *ngIf="loading">
+    <lib-info-card-placeholder
+      [avatar]="true"
+      [count]="5"
+    ></lib-info-card-placeholder>
+  </ng-container>
+
+  <ng-template #sufixAction>
+    <lib-menu-btn
+      id="lib-menu-btn"
+      class="lib-menu-custom-class lib-menu-bg-none"
+      [disableTextShadow]="true"
+      [menuItems]="libMenuItems"
+    >
+      <img [src]="ICONS['horizontal']" alt="icon" />
+    </lib-menu-btn>
+  </ng-template>
+
+  @if (!loading) {
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      <ng-container *ngFor="let i of itineraryMembers">
+        <app-user-tile
+          [name]="i.memberName"
+          [email]="i.memberEmail"
+          [image]="i.memberPic"
+          [sufixTemplate]="sufixAction"
+        ></app-user-tile>
+      </ng-container>
+    </div>
+  }
+
+  <hr class="divider mt-3 mb-3" />
+
+  <h3 class="font-Calistoga text-lg mt-5 mb-4">Common interests</h3>
+  <lib-selectable [options]="[option]"></lib-selectable>
+
+  <div class="flex items-center mt-2">
+    <div class="rounded overflow-hidden">
+      <img
+        class="rounded-full"
+        [src]="ICONS['dummyUserProfile']"
+        height="32px"
+        width="32px"
+      />
+    </div>
+    <span class="ml-2">Makenna Levin</span>
+  </div>
+
+  <div class="flex items-center mt-4">
+    <img
+      class="rounded-full"
+      [src]="ICONS['dummyUserProfile']"
+      height="32px"
+      width="32px"
+    />
+    <span class="ml-2">Jakob Vaccaro</span>
+  </div>
+</div>

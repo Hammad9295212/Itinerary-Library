@@ -1,0 +1,19 @@
+<div>
+  <lib-percentage-bar
+    class="primary-percentage-bar"
+    [value]="95"
+  ></lib-percentage-bar>
+  <app-header (firstButton)="back()" heading="Create Itinerary"></app-header>
+  <app-tab-bar [tabMenuItems]="tabMenuItems"></app-tab-bar>
+
+  <div class="minScreen">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="builder-footer w-full">
+    <lib-footer-shared
+      [canContinue]="true"
+      continueButtonText="Create"
+      (continueButtonClick)="navToNextPage()"
+    ></lib-footer-shared>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="main-content" (click)="clickEventEmitter()">
+  <div class="main-content-sub">
+    <div class="content">
+      <span class="content-icon">
+        <img [ngSrc]="icon" height="60" width="61" />
+      </span>
+      <div class="content-text">
+        <span class="font-bold">
+          <div *ngIf="shortTitle">
+            <span class="heading-sub-part">{{ titleList[0] | translate }}</span>
+          </div>
+          <div *ngIf="!shortTitle">
+            {{ titleList[0] | translate }}
+            <span class="heading-sub-part">{{ titleList[1] | translate }}</span>
+          </div>
+        </span>
+        <p>{{ description | translate }}</p>
+      </div>
+    </div>
+    <span class="content-icon-last">
+      <img [ngSrc]="ICONS['moveForward']" height="50" width="51" />
+    </span>
+  </div>
+</div>

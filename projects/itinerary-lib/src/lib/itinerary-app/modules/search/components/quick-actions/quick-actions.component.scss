@@ -1,0 +1,31 @@
+@use "../../../../_styles/colors" as *;
+
+.search-sub-heading {
+  color: $text-color-4;
+  font-size: var(--font-size-small);
+}
+
+.font-purple {
+  color: $text-color-2;
+}
+
+.main-btn {
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+  width: 160px;
+  font-size: 18px;
+  font-weight: bolder;
+  margin-top: 10px;
+  font-weight: lighter;
+}
+
+.main-btn:last-child {
+  width: 193px;
+}
+
+.main-btn span {
+  margin-top: 2px;
+}

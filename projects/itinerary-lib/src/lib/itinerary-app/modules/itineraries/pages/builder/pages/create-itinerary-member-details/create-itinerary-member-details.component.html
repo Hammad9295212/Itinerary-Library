@@ -1,0 +1,31 @@
+<ng-template #suffixTemplate>
+  <img [src]="ICONS['horizontal']" alt="icon" />
+</ng-template>
+<app-header
+  (firstButton)="back()"
+  [headerSuffixTemplate]="suffixTemplate"
+  heading="Member Details"
+></app-header>
+
+<div class="p-4">
+  <div class="flex items-center justify-center flex-col">
+    <img
+      class="rounded-full"
+      [src]="ICONS['dummyUserProfile']"
+      height="114px"
+      width="114px"
+      alt="user profile"
+    />
+    <h3 class="font-Calistoga text-lg mt-4 mb-2">Jakob Vaccaro</h3>
+    <p>{{ "jackobvaccaro@gmail.com" }}</p>
+  </div>
+
+  <hr class="mt-5 mb-4 divider" />
+
+  <span>Favorite Food</span>
+  <lib-selectable [options]="foodOptions"></lib-selectable>
+
+  <hr class="mt-5 mb-4 divider" />
+  <span>Favorite Destination</span>
+  <lib-selectable [options]="foodOptions"></lib-selectable>
+</div>

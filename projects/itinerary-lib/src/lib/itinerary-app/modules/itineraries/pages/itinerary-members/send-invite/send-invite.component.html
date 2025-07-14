@@ -1,0 +1,22 @@
+<div class="pl-4 pr-4">
+  <app-header heading="Send Invite" (firstButton)="backButton()"></app-header>
+  <lib-search-bar class="search-field" placeholderText="Search Member"
+    (searchStringChange)="handleSearchStringChange($event)" (cleared)="clear()" [searchIcon]="ICONS['dashboardSearch']">
+  </lib-search-bar>
+
+  <p class="interestedPeopleHeading mt-5">Results</p>
+
+  <ng-template #inviteBtn>
+    <div class="flex">
+      <img [src]="ICONS['invitePink']" alt="Invite label" />
+      <button class="pinkTextColor">Invite</button>
+    </div>
+  </ng-template>
+
+  <app-user-tile name="Send App and Itinerary Invite" email="bestfriend@gmail.com" [image]="ICONS['unknownUser']"
+    [sufixTemplate]="inviteBtn"></app-user-tile>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <app-user-stack-tile label="16 People"></app-user-stack-tile>
+</div>

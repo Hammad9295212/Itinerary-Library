@@ -1,0 +1,30 @@
+.filter-title {
+    font-size: 16px;
+}
+
+.filters-description {
+    font-size: var(--font-size-medium);
+}
+
+.filter-button {
+    box-shadow: 4.1px 4.1px 8.2px 0px #00000052 inset;
+    box-shadow: -2.46px -2.46px 3.28px 0px #FFFFFF1A inset;
+    padding: 6.56px 13.13px;
+    border-radius: 27px;
+}
+
+.custom-select {
+    box-shadow: 4.1px 4.1px 8.2px 0px #00000052 inset;
+    box-shadow: -2.46px -2.46px 3.28px 0px #FFFFFF1A inset;
+    background: transparent;
+}
+
+.selectedbutton {
+    background: linear-gradient(94.44deg, #FE3C72 1.26%, #E15561 100%);
+}
+
+.filter-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

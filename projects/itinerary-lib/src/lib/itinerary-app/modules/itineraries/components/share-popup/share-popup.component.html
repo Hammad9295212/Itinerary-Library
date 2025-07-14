@@ -1,0 +1,65 @@
+<div class="share-itinerary min-w-[300px] ">
+  <h2 class="title">Share Itinerary</h2>
+
+  <!-- Add People -->
+  <lib-search-bar class="search-field" [placeholderText]="'SEARCH_PEOPLE_GROUP' | translate"
+       [searchIcon]="ICONS['dashboardSearch']">
+  </lib-search-bar>
+
+  <!-- People with Access -->
+  <div class="section font-[Gilroy] font-bold text-[13.px] mt-4 mb-8">
+    <h3 class="mb-1 access-title">People with Access</h3>
+    <div class="person flex gap-2">
+      <img [src]="peopleWithAccess[0].avatar" alt="avatar" class="avatar object-cover" />
+      <div class="info">
+        <div class="person-name">{{ peopleWithAccess[0].name }}</div>
+        <div class="person-email">{{ peopleWithAccess[0].email }}</div>
+      </div>
+      <div class="role-text text-[#8B8B8B]">{{ peopleWithAccess[0].role }}</div>
+    </div>
+  </div>
+
+  <!-- General Access -->
+  <div class="section">
+    <h3 class="general-access-title  font-[Gilroy] mb-1">General Access</h3>
+    <div class="access-row">
+      <div class="icon mt-[7px]">
+        <img src="assets/icons/restricted_icon.png" class="h-[30px] w-[30px] object-cover p-[6px] rounded-full border-[0.68px] border-white"/>
+      </div>
+      <div [formGroup]="accessForm">
+        <div class="relative inline-block text-white">
+          <select formControlName="access" class="access-select appearance-none bg-transparent focus:outline-none">
+            <option value="Restricted">Restricted</option>
+            <option value="Public">Public</option>
+          </select>
+
+          <!-- Custom arrow icon -->
+          <div class="pointer-events-none absolute inset-y-0 right-1 flex items-center pl-6">
+            <svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.35156 3.61768L6.40146 0.567782H0.301668L3.35156 3.61768Z" fill="white"/>
+            </svg>
+          </div>
+</div>
+
+        <div class="permission-description">
+          <ng-container *ngIf="accessType === 'Restricted'">
+            {{ "ITINERARY.RESTRICTED_ACCESS_MESSAGE" | translate }}
+          </ng-container>
+          <ng-container  *ngIf="accessType === 'Public'">
+            {{ "ITINERARY.PUBLIC_ACCESS_MESSAGE" | translate }}
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="flex justify-center gap-10 mt-5">
+    <button class="custom-flat-button font-[Calistoga]" (click)="copyLink()">
+      {{ "COMMON.COPY_LINK" | translate }}
+    </button>
+    <button class="custom-flat-button-highlighted-font font-[Calistoga]" (click)="close()">
+      {{ "COMMON.DONE" | translate }}
+    </button>
+  </div>
+</div>

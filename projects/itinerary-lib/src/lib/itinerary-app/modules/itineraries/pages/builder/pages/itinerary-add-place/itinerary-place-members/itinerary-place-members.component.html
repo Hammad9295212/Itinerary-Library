@@ -1,0 +1,22 @@
+<div class="p-4 pb-0">
+  <span class="mt-5 mb-4">Total Users</span>
+  <p class="mt-2">4 people</p>
+  <app-user-stack-tile
+    buttonText="4 people"
+    (onClick)="navToUserSearch()"
+  ></app-user-stack-tile>
+  <hr class="divider mt-2 mb-4" />
+
+  <span class="mt-5 mb-4">Common Interest</span>
+
+  <app-user-stack-tile
+    buttonText="2 people"
+    [isSelectableVisible]="true"
+    [selectableOption]="option"
+  ></app-user-stack-tile>
+  <app-user-stack-tile
+    buttonText="4 people"
+    [isSelectableVisible]="true"
+    [selectableOption]="option"
+  ></app-user-stack-tile>
+</div>

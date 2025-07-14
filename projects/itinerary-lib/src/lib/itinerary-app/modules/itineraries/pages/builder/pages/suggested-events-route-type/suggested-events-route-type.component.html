@@ -1,0 +1,52 @@
+<app-create-itinerary-header
+  [progressBarValue]="30"
+  heading="Suggested Events"
+></app-create-itinerary-header>
+<lib-map class="maps-100vh"></lib-map>
+<lib-bottom-modal
+  submitButtonTitle="Continue"
+  [showArrow]="true"
+  [(isOpen)]="isOpen"
+  [adaptToContentHeight]="true"
+  (submitModal)="navToNextPage()"
+>
+  <div class="flex items-center justify-center">
+    <div class="flex items-center w-full">
+      <div class="main-itini-preview w-full pt-0 p-5 pb-0">
+        <section class="mt-3 w-full">
+          <div class="tracking-widest rounded-t-3xl">
+            <p class="w-full flex justify-center text-sm text-white mb-5">
+              Route type
+            </p>
+            <div class="flex gap-[10px]">
+              @for (option of recommendedRouteTypes; track $index) {
+                <lib-selectable [options]="option"></lib-selectable>
+              }
+            </div>
+            <div class="border-t border-gray-700 mt-4 mb-3"></div>
+            <p class="text-white text-[13px] mb-[8.54px]">More</p>
+
+            <div class="flex gap-[10px] flex-wrap">
+              @for (option of moreRouteTypes; track $index) {
+                <lib-selectable [options]="option"></lib-selectable>
+              }
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</lib-bottom-modal>
+<div
+  (click)="showBottomModal()"
+  class="absolute bottom-0 cursor-pointer z-10"
+  style="left: 50%"
+>
+  <img
+    style="transform: rotate(270deg)"
+    [src]="ICONS['rightArrow']"
+    alt="icon"
+    height="15"
+    width="15"
+  />
+</div>

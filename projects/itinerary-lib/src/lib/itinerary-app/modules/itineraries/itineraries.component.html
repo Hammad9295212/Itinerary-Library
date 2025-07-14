@@ -1,0 +1,38 @@
+<lib-app-header-desktop></lib-app-header-desktop>
+<div
+  class="pl-2 pr-4 sticky top-0 left-0 z-10 block md:hidden"
+  style="background-color: #27242c"
+>
+  <ng-template #search>
+    <img [src]="ICONS['search']" alt="right-icon" (click)="searchButtonClick()" />
+  </ng-template>
+
+  <app-header
+    (firstButton)="backButtonClick()"
+    [heading]="'SIDEBAR.ITINERARIES' | translate"
+    [headerSuffixTemplate]="search"
+  ></app-header>
+  <app-tab-bar></app-tab-bar>
+</div>
+<div class="flex">
+<lib-app-sidebar-desktop></lib-app-sidebar-desktop>
+<div
+  class="min-screen-main w-screen max-padd-container bg-transparent md:bg-[#686868] mobile-height-adjust-outer"
+>
+  <div
+    class="minScreen pl-4 pr-4 mobile-height-adjust"
+  >
+    <router-outlet></router-outlet>
+  </div>
+  <lib-popup [isOpen]="modalService.toggleModal">
+    <app-report-itinerary-modal
+      [popupTitle]="'Report Itinerary'"
+    ></app-report-itinerary-modal>
+  </lib-popup>
+  <app-footer></app-footer>
+  <lib-popup [customClass]="'custom-popup-container'" [isOpen]="shareModalService.toggleModal">
+    <lib-share-popup (closeModal)="closeUrlShareModal()" (copyClicked)="copyButtonClicked()"></lib-share-popup>
+  </lib-popup>
+</div>
+</div>
+

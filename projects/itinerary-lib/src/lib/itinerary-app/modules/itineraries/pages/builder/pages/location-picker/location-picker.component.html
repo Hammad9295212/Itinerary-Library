@@ -1,0 +1,30 @@
+<lib-percentage-bar
+  class="primary-percentage-bar"
+  [value]="percentage"
+></lib-percentage-bar>
+<app-header (firstButton)="back()" heading="Location Search"></app-header>
+<div class="mx-6">
+  <lib-input-field
+    #inputField
+    [(ngModel)]="searchText" 
+    label="From where?"
+    [enableGoogleAddress]="true"
+    (locationChange)="onLocationChange($event)"
+  ></lib-input-field>
+</div>
+
+<hr style="margin: 40px 0px 20px 0px" class="divider" />
+
+<div class="mx-6">
+  <a class="text-white flex gap-2">
+    <img [src]="locationIcon" alt="" /> Select from map
+  </a>
+</div>
+
+<div class="builder-footer w-full">
+  <lib-footer-shared
+    (continueButtonClick)="navToNextPage()"
+    [canContinue]="true"
+    continueButtonText="Continue"
+  ></lib-footer-shared>
+</div>

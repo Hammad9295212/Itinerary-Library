@@ -1,0 +1,37 @@
+<div class="z-auto mt-4">
+  <div class="block md:hidden">
+    <lib-search-bar
+      class="search-field"
+      (searchStringChange)="handleSearchStringChange($event)"
+      (cleared)="clear()"
+      [searchIcon]="ICONS['dashboardSearch']"
+      [placeholderText]="'NG_GRID.searchOoo' | translate"
+    >
+    </lib-search-bar>
+    <app-filter-menu (onFilterClick)="navToCommentSearch()"></app-filter-menu>
+  </div>
+  <div class="pb-10">
+    <div
+      class="grid-columns sm:mt-3 md:mt-10 grid grid-cols-1 md:grid-cols-3 sm:gap-y-5 md:gap-y-10 gap-x-10"
+    >
+      <ng-container *ngFor="let item of libMenuItems; let i = index">
+        <app-cutom-card
+          [libMenuItem]="libMenuItem"
+          [cardData]="item"
+          [isDraft]="false"
+          [itineraryStarted]="true"
+          (TitleClicked)="navigateToDetail(item)"
+          (forkClicked)="navToBranchItinerary()"
+          (messageClicked)="navToComments()"
+          (imageClicked)="navToStories()"
+          (eyeClicked)="navToNotifications()"
+          (menuClicked)="menuClicked($event)"
+        ></app-cutom-card>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<lib-popup [isOpen]="modalSendToClientService.toggleModal">
+  <lib-send-to-client></lib-send-to-client>
+</lib-popup>
+<lib-toast></lib-toast>

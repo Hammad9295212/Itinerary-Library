@@ -1,0 +1,21 @@
+<div class="bottom-modal-items">
+  <app-create-itinerary-modal-item
+    *ngFor="let item of contentList"
+    [icon]="item.icon"
+    [title]="item.title"
+    [description]="item.description"
+    [shortTitle]="item.shortTitle"
+    (clickEvent)="modalClick(item.id)"
+    class="craete-itinerary-modal"
+  >
+  </app-create-itinerary-modal-item>
+</div>
+
+<div class="pl-4 pr-4">
+  <lib-primary-btn
+    class="btn-back mt-5"
+    [hoverOutline]="true"
+    (click)="backButton()"
+    >{{ "ITINERARY.BACK" | translate }}</lib-primary-btn
+  >
+</div>

@@ -1,0 +1,27 @@
+.comment-card {
+  .text-md {
+    font-size: 14px;
+  }
+  .text-sm {
+    font-size: 12px;
+  }
+  .text-xs {
+    font-size: 10px;
+  }
+  img {
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .custom-pink {
+    margin-left: 0;
+    font-weight: bold;
+    color: #fe3c72;
+  }
+}
+
+.comment-user {
+  height: 20px;
+  width: 20px;
+}

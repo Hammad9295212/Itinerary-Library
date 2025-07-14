@@ -1,0 +1,19 @@
+.active {
+  color: var(--secondary-color) !important;
+  opacity: 100% !important;
+}
+
+.lib-menu-bg-none {
+  --lib-list-button-padding: 10px !important;
+  --lib-button-container-background: transparent !important;
+  --lib-button-background: transparent !important;
+  --lib-button-border-radius: 0 !important;
+  --lib-button-border: 0 !important;
+  --box-shadow: none !important;
+}
+
+.lib-menu-bg-none button.mat-ripple {
+  background-color: black !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+}

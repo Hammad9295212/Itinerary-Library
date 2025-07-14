@@ -1,0 +1,134 @@
+<lib-base-card
+  *ngIf="processedCardData"
+  class="card-component px-4 py-4 my-2 rounded-lg outset-downshadow"
+>
+  <div class="flex items-start justify-between mb-2">
+    <div class="flex gap-5 items-start">
+      <div
+        [class]="
+          !isDraft
+            ? ' text-primary'
+            : '' +
+              ' items-center sm:text-[10px] xs:text-[9px] flex flex-col gap-y-[0px]'
+        "
+      >
+        <img [src]="!isDraft ? ICONS['upvote'] : ICONS['upArrowWhite']" alt="" />
+        <span [class]="!isDraft ? 'text-primary' : 'drah-voter-header'">
+          {{ processedCardData.upVotes }}
+        </span>
+        <img [src]="ICONS['downvote']" alt="" />
+      </div>
+      <div class="">
+        <h4 class="title medium-14 p-0 m-0" (click)="handleTitleClick()">
+          {{ processedCardData.title }}
+        </h4>
+        <h5
+          class="text-secondary opacity-80 text-[10px] xs:text-[9px] flex gap-[6px] items-center"
+        >
+          <img [src]="ICONS['user']" alt="" />
+          <span
+            >{{ processedCardData.userName }} -
+            {{ processedCardData.timeAgo }}</span
+          >
+        </h5>
+      </div>
+    </div>
+    <div class="draft-header" *ngIf="processedCardData.isDraft">
+      Draft Saved
+    </div>
+
+    <div class="flex items-center">
+      <div
+        *ngIf="itineraryStarted"
+        (click)="handleStartItineraryClick()"
+        class="startItinerary"
+      >
+        <img [src]="ICONS['startItinerary']" alt="icon" />
+      </div>
+      <lib-menu-btn
+        (select)="handleMenueItemSelect()"
+        (click)="handleMenuClick()"
+        (change)="handleMenuItemChange()"
+        class="lib-menu-custom-class"
+        [disableTextShadow]="true"
+        [menuItems]="libMenuItem"
+      >
+        <img [src]="ICONS['horizontal']" alt="" />
+      </lib-menu-btn>
+    </div>
+  </div>
+  <hr class="h-1 text-secondary opacity-25" />
+  <div class="my-2 mb-1 flex items-start gap-x-5">
+    <div class="1 mb-0 flex flex-col items-center justify-center">
+      <img
+        [class]="isDraft ? 'draf-location-image' : ''"
+        [src]="processedCardData.imageSrc"
+        alt=""
+        width="100"
+      />
+    </div>
+    <div class="2">
+      <div
+        *ngIf="!cardData?.isDraft"
+        class="font-normal text-secondary flex items-center gap-x-4 text-sm"
+      >
+        <ul class="flex flex-col gap-y-[6px] xs:text-[9px] sm:text-[12px]">
+          <li
+            *ngFor="let location of cardDataForLocations.locationColumn1"
+            class="location-item flex items-center gap-1"
+          >
+            <img [src]="location.icon" alt="" />
+            <span class="truncate sm:max-w-10 xs:max-w-11">{{
+              location.name
+            }}</span>
+          </li>
+        </ul>
+        <ul class="flex flex-col gap-y-[6px] xs:text-[9px] sm:text-[12px]">
+          <li
+            *ngFor="let location of cardDataForLocations.locationColumn2"
+            class="location-item flex items-center gap-1"
+          >
+            <img [src]="location.icon" alt="" />
+            <span class="truncate sm:max-w-10 xs:max-w-11">{{
+              location.name
+            }}</span>
+          </li>
+        </ul>
+      </div>
+      <p *ngIf="processedCardData.isDraft" class="text-xs draft-description">
+        {{ "FINISH_ITINERARY_CREATION" | translate }}
+      </p>
+    </div>
+  </div>
+  <hr class="h-1 text-secondary opacity-25" />
+  <div class="my-2 flex items-center justify-between">
+    <div
+      class="flex items-center justify-between sm:gap-x-7 xs:gap-x-5 sm:text-sm xs:text-[9px] text-secondary"
+    >
+      <div class="flex items-center gap-x-[6px]">
+        <img class="bottom-icons" [src]="ICONS['eye']" alt="" />
+        <span class="bottom-tags">{{ processedCardData.views }}</span>
+      </div>
+      <div
+        (click)="handleMessageClicked()"
+        class="flex items-center gap-x-[6px]"
+      >
+        <img class="bottom-icons" [src]="ICONS['comment2']" alt="" />
+        <span class="bottom-tags">{{ processedCardData.comments }}</span>
+      </div>
+      <div (click)="handleForkClick()" class="flex items-center gap-x-[6px]">
+        <img class="bottom-icons" [src]="ICONS['fork']" alt="" />
+        <span class="bottom-tags">{{ processedCardData.shares }}</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-x-2">
+      <span class="text-xs userIconText">
+        {{ processedCardData.users }}
+        <span class="user-icon-text" *ngIf="processedCardData.users > 0"
+          >Users</span
+        >
+      </span>
+      <img [src]="processedCardData.userimageSrc" alt="" />
+    </div>
+  </div>
+</lib-base-card>

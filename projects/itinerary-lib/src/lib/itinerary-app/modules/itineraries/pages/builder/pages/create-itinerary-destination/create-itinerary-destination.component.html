@@ -1,0 +1,53 @@
+<app-create-itinerary-header
+  [progressBarValue]="15"
+  heading="Create Itinerary"
+></app-create-itinerary-header>
+<lib-map class="maps-100vh"></lib-map>
+<lib-bottom-modal
+  (submitModal)="navToPickStartLocation()"
+  submitButtonTitle="Continue"
+  [showArrow]="true"
+  [(isOpen)]="isOpen"
+  [adaptToContentHeight]="true"
+>
+  <div class="pl-4 pr-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <lib-icon-btn class="checkmark-icon-button">
+          <img
+            [src]="ICONS['startMarkerImage']"
+            alt="icon"
+            height="16"
+            width="16"
+          />
+        </lib-icon-btn>
+        <div class="ml-4">
+          <span>Shan-ul-haq haqee road</span>
+          <p>Starting location</p>
+        </div>
+      </div>
+      <img [src]="ICONS['editPink']" alt="edit" height="13" width="13" />
+    </div>
+
+    <h1 class="font-Calistoga text-lg mt-5">Destination</h1>
+    <p class="mt-3">Select final destination for itinenary route.</p>
+
+    <div class="mt-3"> 
+      <lib-text-box (click)="navToPickStartLocation()" class="textbox-1" label="Where To?"></lib-text-box>
+    </div>
+  </div>
+</lib-bottom-modal>
+
+<div
+  (click)="showBottomModal()"
+  class="absolute bottom-0 cursor-pointer z-10"
+  style="left: 50%"
+>
+  <img
+    style="transform: rotate(270deg)"
+    [src]="ICONS['rightArrow']"
+    alt="icon"
+    height="15"
+    width="15"
+  />
+</div>

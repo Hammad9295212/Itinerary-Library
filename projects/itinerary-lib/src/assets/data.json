@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "upVotes": "2.4k",
+  "downVotes": 5,
+  "title": "Adventuretour",
+  "userName": "Jonathan",
+  "timeAgo": "2 hours ago",
+  "location": "WESTMINSITERO",
+  "views": 100,
+  "comments": 20,
+  "shares": 5,
+  "users": 4,
+  "imageSrc": "/assets/images/map.png",
+  "userimageSrc": "/assets/images/user-image.png",
+  "isDraft": false
+}

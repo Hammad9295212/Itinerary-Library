@@ -1,0 +1,21 @@
+<div class="main-search-screen pt-5 px-4">
+  <div class="sub-screen">
+    <lib-search-bar class="search-field" [placeholderText]="'SEARCH_ITINERARIES' | translate"
+      (searchStringChange)="handleSearchStringChange($event)" (cleared)="clear()" [searchIcon]="ICONS['dashboardSearch']">
+    </lib-search-bar>
+    <!-- <lib-filter-bar [filters]="filtersss" [savedFilters]="filtersss" [userFiltersList]="userFilterList"
+    [standardFilters]="filtersss" [showAllFilters]="true" (searchStringChange)="search($event)"
+    [activeFilter]="userFilterList[0]"></lib-filter-bar> -->
+    <app-search-chips (chipItemSelected)="categorySelected($event)"></app-search-chips>
+    <div class="p-4">
+      <ng-container *ngIf="isSearching">
+        <app-search-results [data]="filteredData"></app-search-results>
+      </ng-container>
+      <app-recent-searches *ngIf="!isSearching"></app-recent-searches>
+      <app-serach-clear-history *ngIf="!isSearching"></app-serach-clear-history>
+      <div class="border-t border-gray-700 mt-2" *ngIf="!isSearching"></div>
+      <app-quick-actions [hidden]="searchString && !selectedCategory"></app-quick-actions>
+      <app-serach-bottom-bar></app-serach-bottom-bar>
+    </div>
+  </div>
+</div>

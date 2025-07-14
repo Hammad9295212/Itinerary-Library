@@ -1,0 +1,64 @@
+<app-create-itinerary-header
+  [progressBarValue]="40"
+  heading="Select Events"
+></app-create-itinerary-header>
+<lib-map class="maps-100vh"></lib-map>
+<lib-bottom-modal
+  submitButtonTitle="Continue"
+  [showArrow]="true"
+  [(isOpen)]="isOpen"
+  (submitModal)="navToNextPage()"
+  [adaptToContentHeight]="true"
+>
+  <div class="p-4 pt-0 pb-0" style="height: 220px; overflow: auto">
+    <p class="text-justify text-[12px]">
+      Click the event pins to add/remove them in the itinerary. Hold the event
+      pin to see Event Details. Click map area to exit from Event Details.
+    </p>
+    <span class="block text-center mt-3">Places</span>
+
+    <div class="mt-4">
+      <lib-selectable [options]="options"></lib-selectable>
+    </div>
+
+    <hr
+      class="mt-4 mb-4"
+      style="border: 0.82px solid rgba(255, 255, 255, 0.25)"
+    />
+
+    <span>Select automatically</span>
+    <div class="flex items-end justify-between mt-2">
+      <p class="text-[12px] leading-[150%] mr-2">
+        We will select places which are best for you for your itinerary.
+      </p>
+      <div class="pr-1">
+        <lib-toggle class="toggle-sm"></lib-toggle>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <div class="flex items-center justify-between">
+        <span>Number of places</span>
+        <span>3</span>
+      </div>
+      <lib-range-selector
+        [stepValue]="2"
+        [minValue]="1"
+        [maxValue]="14"
+      ></lib-range-selector>
+    </div>
+  </div>
+</lib-bottom-modal>
+<div
+  (click)="showBottomModal()"
+  class="absolute bottom-0 cursor-pointer z-10"
+  style="left: 50%"
+>
+  <img
+    style="transform: rotate(270deg)"
+    [src]="ICONS['rightArrow']"
+    alt="icon"
+    height="15"
+    width="15"
+  />
+</div>

@@ -1,0 +1,30 @@
+<div class="search-hero">
+  <div class="flex items-center justify-between mt-4 ml-5 mr-5">
+    <div></div>
+    <span class="font-[Calistoga] font-normal text-[17px] leading-[100%] tracking-[0.07px]">Search</span>
+    <img [src]="ICONS['horizontalWhite']" />
+  </div>
+
+  <div class="m-5">
+    <lib-search-bar (searchStringChange)="handleSearchStringChange($event)" (cleared)="clear()"
+      [searchIcon]="ICONS['dashboardSearch']" [placeholderText]="'NG_GRID.searchOoo' | translate">
+    </lib-search-bar>
+
+    <ng-container *ngIf="loading">
+      <div style="height: 65vh; overflow: auto" class="flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!loading">
+      <div style="height: 65vh; overflow: auto">
+        <div class="no-result">
+          <p class="mt-2 text-center custom-text">
+            Search the entire application
+          </p>
+          <span class="custom-text">no results.</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

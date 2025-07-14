@@ -1,0 +1,20 @@
+  <div class="delete-modal text-center">
+    <img [ngSrc]="ICONS['delete']" height="46" width="46" class="mx-auto" />
+    
+    <h3 class="font-[Calistoga] mt-5">
+      {{ "ITINERARY.CLEAR_SEARCH_HISTORY" | translate }}
+    </h3>
+    
+    <p class="text-white mb-2 max-w-[80%] ml-auto mr-auto mt-1 text-[10px]">
+      {{ "ITINERARY.CLEAR_SEARCH_WARNING" | translate }}
+    </p>
+    
+    <div class="flex justify-center gap-10 mt-5">
+      <button class="custom-flat-button font-[Calistoga]" (click)="closeModal()">
+        {{ "COMMON.KEEP" | translate }}
+      </button>
+      <button class="custom-flat-button-highlighted-font font-[Calistoga]" (click)="deleteItinerary()">
+        {{ "COMMON.CLEAR" | translate }}
+      </button>
+    </div>
+  </div>

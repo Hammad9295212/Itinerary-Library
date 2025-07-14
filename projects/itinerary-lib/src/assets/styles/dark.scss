@@ -1,0 +1,16 @@
+:root {
+  --primary-background: linear-gradient(
+    191.18deg,
+    $background-color-1 61.33%,
+    $background-color-10 101.43%
+  );
+  --primary-color: $scroll-color;
+  --secondary-color: rgba(255, 255, 255, 0.7);
+  --tertiary-color: rgba(255, 255, 255, 0.5);
+  --primary-button-background: linear-gradient(
+    94.44deg,
+    $scroll-color 1.26%,
+    $cyrano-primary 100%
+  ) !important;
+  --black-button-background: $background-color-1;
+}

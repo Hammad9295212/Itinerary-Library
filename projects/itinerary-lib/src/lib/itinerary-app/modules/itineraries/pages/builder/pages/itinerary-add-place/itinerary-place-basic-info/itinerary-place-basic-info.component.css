@@ -1,0 +1,4 @@
+:host ::ng-deep lib-icon-btn {
+  --lib-icon-button-height: 48px;
+  --lib-icon-button-width: 48px;
+}

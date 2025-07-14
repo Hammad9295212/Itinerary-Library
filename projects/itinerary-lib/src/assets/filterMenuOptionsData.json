@@ -1,0 +1,6 @@
+[
+  { "label": "Featured", "value": "1" },
+  { "label": "Hot", "value": "2" },
+  { "label": "Best", "value": "3" },
+  { "label": "New", "value": "4" }
+]

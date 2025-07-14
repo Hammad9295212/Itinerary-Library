@@ -1,0 +1,12 @@
+[
+  { "label": "Spam & Unwanted Content", "value": 1 },
+  { "label": "Pornography or sexually explicit content", "value": 2 },
+  { "label": "Child abuse", "value": 3 },
+  { "label": "Hate speech or graphic violence", "value": 4 },
+  { "label": "Promotes terrorism", "value": 5 },
+  { "label": "Harassment or bullying", "value": 6 },
+  { "label": "Suicide or self injury", "value": 7 },
+  { "label": "Misinformation", "value": 8 },
+  { "label": "Dangerous", "value": 10 },
+  { "label": "None of these are my issues", "value": 9 }
+]

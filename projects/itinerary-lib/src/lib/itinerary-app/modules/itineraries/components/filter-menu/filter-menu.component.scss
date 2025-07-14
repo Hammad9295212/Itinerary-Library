@@ -1,0 +1,16 @@
+@use "../../../../_styles/colors" as *;
+
+$box-shadow-primary: 9.026px 8.205px 22.153px 2.051px rgba(17, 16, 20, 0.65);
+$box-shadow-secondary: -4.102px -4.102px 13.128px -2.462px
+  rgba(203, 199, 209, 0.25);
+
+.filter-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.checkmark-icon-btn img {
+  margin-left: 1.6px;
+}

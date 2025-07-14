@@ -1,0 +1,46 @@
+@use "../../../../../../_styles/colors" as *;
+
+.main-content {
+  background: $background-color-1;
+  padding: 20px 0px 20px 0px;
+  border-radius: 10px;
+  box-shadow: 9.03px 8.2px 22.15px 2.05px $box-shadow-6;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-content-sub,
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  left: 10px;
+}
+
+.content-icon-last {
+  margin-right: 5px;
+}
+
+.content-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.heading-sub-part {
+  color: var(--secondary-color);
+}
+
+.content p {
+  color: $text-color-3;
+  font-size: 9px;
+  margin-top: 5px;
+  width: 200px;
+  text-align: start;
+}

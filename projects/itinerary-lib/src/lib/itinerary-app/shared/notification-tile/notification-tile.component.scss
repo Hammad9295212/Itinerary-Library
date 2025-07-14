@@ -1,0 +1,46 @@
+.reviewNowButton {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height */
+  margin-left: 13%;
+  color: #fe3c72;
+}
+
+.hoursAgo {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8.205px;
+  line-height: 10px;
+  /* identical to box height */
+  letter-spacing: -0.011em;
+  min-width: 35px;
+
+  color: #bdbdbd;
+}
+
+.markAllAsRead {
+  box-shadow: 5.79093px 5.26448px 14.2141px 1.31612px rgba(17, 16, 20, 0.65);
+  filter: drop-shadow(
+    -2.63224px -2.63224px 8.42317px rgba(203, 199, 209, 0.25)
+  );
+  box-sizing: border-box;
+  border: 1.1487px solid rgba(255, 255, 255, 0.5);
+  border-radius: 52.6448px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11.487px;
+  line-height: 160%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.unattendedNotification {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.text-xs {
+  font-size: 9.85px;
+}

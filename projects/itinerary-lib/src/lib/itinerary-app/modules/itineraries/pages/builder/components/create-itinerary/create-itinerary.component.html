@@ -1,0 +1,15 @@
+<lib-secondary-btn (click)="openModal()" class="builder-add-btn p-5 mt-6">
+  <span>
+    <img [ngSrc]="ICONS['plus']" height="13" width="16" />
+  </span>
+  Create New Itinerary
+</lib-secondary-btn>
+<lib-bottom-modal
+  #testModal
+  class="custom-bottom-modal"
+  (isOpenChange)="enableBack = !enableBack"
+  [isOpen]="modalService.bottomToggleModal"
+  [customClass]="'custom-modal'"
+>
+  <app-create-itinerary-modal></app-create-itinerary-modal>
+</lib-bottom-modal>

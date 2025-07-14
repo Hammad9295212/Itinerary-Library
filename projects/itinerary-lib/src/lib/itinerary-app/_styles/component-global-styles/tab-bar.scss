@@ -1,0 +1,21 @@
+@use "../../_styles/colors" as *;
+
+.p-tabmenu-nav-content {
+  font-family: "Calistoga", cursive;
+  margin: 0px 0px !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.p-ripple.p-element.p-menuitem-link.p-menuitem-link-active {
+  border-width: 3px !important;
+}
+
+.p-menuitem-text {
+  color: rgb(255, 255, 255, 0.5) !important;
+}
+
+.p-menuitem-link-active .p-menuitem-text {
+  color: $text-color-3 !important;
+}

@@ -1,0 +1,69 @@
+<header class="items-center justify-between py-1 px-6 hidden md:flex">
+    <div class="flex-auto">
+      <img src="assets/icons/logo.svg" />
+    </div>
+    <div class="flex-auto">
+      <div
+        class="bottom-nav-item flex flex-col items-center"
+      >
+        <img src="assets/icons/home.svg" />
+        <span [class]="'span-text'" style="font-size:6.81px;">Home</span>
+      </div>
+    </div>
+    
+
+    <div class="flex-grow w-1/8">
+      <lib-search-bar
+        class="search-field"
+        [searchIcon]="'assets/icons/dashboard_search.svg'"
+        [placeholderText]="'NG_GRID.searchOoo' | translate"
+      >
+      </lib-search-bar>
+    </div>
+      
+    <div class="flex-auto text-right">
+      <div
+        class="bottom-nav-item flex flex-col items-center"
+      >
+        <img src="assets/icons/constituents.svg" />
+        <span [class]="'span-text'" style="font-size:6.81px;">Constituents</span>
+      </div>
+    </div>
+
+    <div class="flex-auto font-white text-right">
+      <div
+        class="bottom-nav-item flex flex-col items-center"
+      >
+        <img src="assets/icons/itineraries.svg" />
+        <span [class]="'span-text'" style="font-size:6.81px;">Itinerary</span>
+      </div>
+    </div>
+
+    <div class="flex-auto font-white text-right">
+      <div
+        class="bottom-nav-item flex flex-col items-center"
+      >
+        <img src="assets/icons/stats.svg" />
+        <span [class]="'span-text'" style="font-size:6.81px;">Stats</span>
+      </div>
+    </div>
+
+    <div class="flex-auto font-white text-right">
+      <div
+        class="bottom-nav-item flex flex-col items-center"
+      >
+        <img src="assets/icons/setting.svg" />
+        <span [class]="'span-text'" style="font-size:6.81px;">Settings</span>
+      </div>
+    </div>
+
+    <div class="flex justify-end flex-auto">
+        <div class="h-[30px] w-[30px]">
+            <lib-user-menu
+                [userImageUrl]="'assets/images/user-image.jpg'"
+            >
+            </lib-user-menu>
+        </div>
+      
+    </div>
+</header>

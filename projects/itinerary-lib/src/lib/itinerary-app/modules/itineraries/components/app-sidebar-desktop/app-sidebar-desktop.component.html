@@ -1,0 +1,64 @@
+  <aside class="w-[260px] min-h-screen text-white p-4 flex flex-col gap-10 space-y-6 font-semibold hidden md:block">
+  <!-- Header -->
+  <ng-template #suffix>
+    <span class="discard"><img [ngSrc]="ICONS['search']" height="17" width="18" /></span>
+  </ng-template>
+  <section class="flex justify-between">
+    <lib-icon-btn (click)="back()" class="checkmark-icon-button">
+      <img [ngSrc]="ICONS['back']" height="17" width="18" />
+    </lib-icon-btn>
+    <h4 class="font-[Calistoga] text-[24px]">{{ "SIDEBAR.ITINERARIES" | translate }}</h4>
+    <lib-icon-btn  (click)="openSearch()" class="checkmark-icon-button">
+      <img [ngSrc]="ICONS['search']" height="17" width="18" />
+    </lib-icon-btn>
+  </section>
+
+  <section class="flex flex-col gap-10">
+    <!-- Explore Section -->
+    <div class="flex flex-col justify-center">
+      <button class="m-auto w-[100px] text-center font-[Calistoga] text-[24px] font-normal" (click)="openExplorePage()">{{ "SIDEBAR.EXPLORE" | translate }}</button>    
+      <h2 *ngIf="currentUrl === '/itineraries/explore'" class="m-auto w-[90px] mt-2 text-center underline-custom"></h2>    
+      <div class="flex justify-center mt-6">
+          <div
+              (click)="openCommentsSearch()"
+              class="flex items-center justify-center rounded-full cursor-pointer"
+              style="
+                  width: 40px;
+                  height: 40px;
+                  background: rgba(39, 36, 44, 1);
+                  box-shadow:
+                  -6.4px -6.4px 20.49px -3.84px rgba(203, 199, 209, 0.25),
+                  14.08px 12.8px 34.57px 3.2px rgba(17, 16, 20, 0.65);
+              "
+              
+              >
+              <img [ngSrc]="ICONS['desktopSearch']" height="17" width="18" class="w-5 h-5" />
+              </div>
+      </div>
+      <div class="flex justify-center mt-6">
+          <button class="custom-button font-[Gilroy] font-normal text-[18px]">{{"SIDEBAR.FEATURED" | translate}}</button>
+      </div>
+      <div class="flex justify-center mt-6">
+          <button class="custom-button font-[Gilroy] font-normal text-[18px]">{{"SIDEBAR.HOT" | translate}}</button>
+      </div>
+      <div class="flex justify-center mt-6">
+          <button class="custom-button [Gilroy] font-normal text-[18px]">{{"SIDEBAR.BEST" | translate}}</button>
+      </div>
+      <div class="flex justify-center mt-6">
+          <button class="custom-button [Gilroy] font-normal text-[18px]">{{"SIDEBAR.NEW" | translate}}</button>
+      </div>
+    </div>
+
+    <!-- Builder Section -->
+    <div class="flex flex-col justify-center">
+      <button class="font-[Calistoga] text-[24px] font-normal" (click)="openBuilderPage()">{{"SIDEBAR.BUILDER" | translate}}</button>
+      <h2 *ngIf="currentUrl === '/itineraries/builder'" class="m-auto w-[90px] mt-2 text-center underline-custom"></h2> 
+    </div>
+
+    <!-- Builder Section -->
+    <div class="flex flex-col justify-center">
+      <button class="font-[Calistoga] text-[24px] font-normal" (click)="openFavoritesPage()">{{"SIDEBAR.FAVOURITE" | translate }}</button>
+      <h2 *ngIf="currentUrl === '/itineraries/favorites'" class="m-auto w-[90px] mt-2 text-center underline-custom"></h2> 
+    </div>
+  </section>
+</aside>

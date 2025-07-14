@@ -1,0 +1,42 @@
+.lib-menu-custom-class .text {
+  padding: 0 !important;
+  font-size: 10px !important;
+}
+
+.mat-mdc-menu-item-text {
+  padding: 0 !important;
+  font-size: 14px !important;
+}
+
+.mat-mdc-menu-item-text img {
+  height: 15px !important;
+  width: 15px !important;
+  margin-top: 5px !important;
+  margin-right: 20px !important;
+}
+
+.mat-mdc-menu-item {
+  min-height: 35px !important;
+}
+
+.lib-menu-custom-class .btn-text {
+  margin-bottom: 10px;
+}
+
+.lib-menu-custom-class .mat-ripple {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.lib-menu-custom-class .lib-button-component {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.lib-menu-custom-class .lib-button-container {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

@@ -1,0 +1,16 @@
+.builder-add-btn lib-base-btn .mat-ripple .btn-text {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  color: var(--lib-secondary-button-font-color) !important;
+  text-shadow: var(--lib-secondary-button-text-shadow) !important;
+}
+
+.builder-add-btn .lib-button-container {
+  display: none !important;
+}
+.builder-add-btn .mat-ripple {
+  height: 60px !important;
+}

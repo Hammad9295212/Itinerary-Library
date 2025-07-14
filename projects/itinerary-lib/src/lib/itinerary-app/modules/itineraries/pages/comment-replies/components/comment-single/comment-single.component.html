@@ -1,0 +1,71 @@
+<ng-container *ngIf="comment">
+    <div class="comment-card text-white p-4 rounded-xl w-full">
+        <div class="flex items-start justify-between">
+            <!-- Left Side: Profile & Details -->
+            <div class="flex space-x-3">
+                <!-- Profile Image -->
+                <img [src]="ICONS['user']" alt="User" class="w-10 h-10 rounded-full" />
+
+                <!-- Username & Timestamp -->
+                <div>
+                    <h4 class="text-sm font-semibold">{{ comment.userName }} - {{ comment.timeAgo }}
+                        {{comment.isEditted
+                        ==
+                        true ?
+                        "(Edited)" : ""}}</h4>
+                    <p class="text-md text-gray-300">{{ comment.commentText }}</p>
+                </div>
+            </div>
+
+            <lib-menu-btn (select)="handleMenueItemSelect()" (click)="handleMenuClick()"
+                (change)="handleMenuItemChange()" class="lib-menu-custom-class lib-menu-bg-none" [disableTextShadow]="true"
+                [menuItems]="libMenuItem">
+                <img [src]="ICONS['horizontalWhite']" alt="" />
+            </lib-menu-btn>
+        </div>
+
+        <!-- Attachments Section (Visible Only If hasAttachment is True) -->
+        <div *ngIf="comment.hasAttachments===true" class="grid grid-cols-2 gap-2 mt-3">
+            <ng-container *ngFor="let image of comment.attachments; let i = index">
+                <div class="relative" *ngIf="i < 4">
+                    <img [src]="image" alt="Attachment" class="w-full h-28 rounded-lg object-cover" />
+                    <div *ngIf="i === 3 && comment.attachments"
+                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-xl font-bold">
+                        +{{ i }}
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <!-- Voting & Actions -->
+        <div class="flex items-center justify-between mt-3">
+            <!-- Upvote/Downvote -->
+            <div class="flex flex-col items-center text-pink-500">
+                <img [src]="ICONS['upvote']" alt="Upvote" class="cursor-pointer" />
+                <span class="text-xs font-semibold">{{ comment.upVotes }}K</span>
+                <img [src]="ICONS['downvote']" alt="Downvote" class="cursor-pointer" />
+            </div>
+
+            <!-- Reply & Feature Comment -->
+            <div class="flex space-x-4 text-gray-400 text-sm">
+                <button class="flex items-center space-x-1 hover:text-white">
+                    <img [src]="ICONS['comment2']" alt="Reply" />
+                    <span>Reply</span>
+                </button>
+                <button class="flex items-center space-x-1 hover:text-white">
+                    <ng-container *ngIf="featured; else notFeatured">
+                        <img [src]="ICONS['removeFeature']" alt="Feature" />
+                        <span>Featured</span>
+                    </ng-container>
+                    <ng-template #notFeatured>
+                        <img [src]="ICONS['addFeature']" alt="Feature" />
+                        <span>Feature Comment</span>
+                    </ng-template>
+                </button>
+            </div>
+        </div>
+
+        <!-- Separator Line -->
+        <div class="border-t border-gray-700 mt-2"></div>
+    </div>
+</ng-container>

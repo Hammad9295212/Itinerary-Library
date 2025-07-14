@@ -1,0 +1,85 @@
+@use "../../_styles/colors" as *;
+
+.card-component {
+  --width: auto;
+  background: $background-color-1;
+}
+
+.bottom-tags {
+  font-size: 12px;
+}
+
+.draft-header {
+  color: $text-color-4;
+  font-weight: normal !important;
+  font-size: 11px !important;
+  margin-top: 7px;
+  position: relative;
+}
+
+.draft-description {
+  color: $text-color-3;
+}
+
+.usericon-text {
+  color: $text-color-4;
+  margin-top: 2px;
+  font-size: 11px;
+}
+
+.bottom-icons {
+  height: 15px;
+  width: 16px;
+}
+
+.bottom-icons:last-child {
+  height: 16px !important;
+  width: 17px !important;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.bottom-bar-loc {
+  background: $background-color-9 !important;
+  width: 5rem !important;
+  bottom: 1rem !important;
+}
+
+.location-item-main {
+  font-size: 12px;
+}
+
+.location-item-main span {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.location-item span {
+  color: $text-color-7 !important;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.drah-voter-header {
+  font-family: Gilroy-Thin;
+  margin-top: 5px !important;
+}
+
+.title {
+  font-family: var(--font-gilroy-bold);
+}
+
+.h-1 {
+  opacity: 0.1 !important;
+}
+
+.content-card {
+  padding: 0 !important;
+}
+
+.startItinerary {
+  position: relative;
+  top: -4px;
+}

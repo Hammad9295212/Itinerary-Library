@@ -1,0 +1,60 @@
+<app-create-itinerary-header
+  [progressBarValue]="50"
+  heading="Create Itinerary"
+></app-create-itinerary-header>
+<img
+    (click)="toggleFilter()"
+    class="cursor-pointer"
+    style="position: absolute; right: 10px; top: 20%; z-index: 99;"
+    [src]="ICONS['dotsIcon']"
+    alt="icon"
+    height="40"
+    width="40"
+  />
+<lib-map #libMap class="maps-100vh"></lib-map>
+<div class="filter-page" *ngIf="openFilters">
+  <lib-no-visual-map-filters
+    (presetsChanged)="onPresetsChanged($event)"
+    (backButtonClicked)="onbackButtonClicked()"
+  ></lib-no-visual-map-filters>
+</div>
+<lib-bottom-modal
+  [showArrow]="true"
+  [(isOpen)]="isOpen"
+  [adaptToContentHeight]="true"
+>
+  <div class="pl-4 pr-4">
+    <div class="flex items-center justify-between">
+      <h3 class="font-Calistoga text-lg">{{ "NO_VISUAL_FILTERS"| translate }}</h3>
+      <div class="selectables flex items-center">
+        <div
+          (click)="updateAction(a)"
+          class="flex items-center justify-center actions"
+          *ngFor="let a of actions"
+          [ngClass]="{ selected: a === selected }"
+        >
+          <img [src]="a" alt="icon" loading="lazy" />
+        </div>
+      </div>
+    </div>
+    <p class="mt-3 mb-4">{{ "NO_VISUAL_FILTERS"| translate }}</p>
+  </div>
+  <lib-footer-shared
+    (continueButtonClick)="continueBuilding()"
+    [canContinue]="true"
+    [continueButtonText]="'COMMON.CONTINUE' | translate"
+    ></lib-footer-shared>
+</lib-bottom-modal>
+<div
+  (click)="showBottomModal()"
+  class="absolute bottom-0 cursor-pointer z-10"
+  style="left: 50%"
+>
+  <img
+    style="transform: rotate(270deg)"
+    [src]="ICONS['rightArrow']"
+    alt="icon"
+    height="15"
+    width="15"
+  />
+</div>

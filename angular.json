@@ -1,0 +1,166 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "itinerary-lib": {
+      "projectType": "library",
+      "root": "projects/itinerary-lib",
+      "sourceRoot": "projects/itinerary-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/itinerary-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/itinerary-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/itinerary-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/itinerary-lib/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "itinerary-lib-test": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "projects/itinerary-lib-test",
+      "sourceRoot": "projects/itinerary-lib-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/itinerary-lib-test",
+            "index": "projects/itinerary-lib-test/src/index.html",
+            "browser": "projects/itinerary-lib-test/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/itinerary-lib-test/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/itinerary-lib-test/src/favicon.ico",
+              "projects/itinerary-lib-test/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/itinerary-lib/src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/nextsapien-component-lib/src/assets",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/swiper/swiper-bundle.min.css",
+              "./node_modules/nextsapien-component-lib/src/lib/shared-styles/styles.scss",
+              "./node_modules/nextsapien-component-lib/src/lib/shared-styles/common/overrides.scss",
+              "projects/itinerary-lib-test/src/styles.scss",
+              "projects/itinerary-lib/src/lib/itinerary-app/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "itinerary-lib-test:build:production"
+            },
+            "development": {
+              "buildTarget": "itinerary-lib-test:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "itinerary-lib-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/itinerary-lib-test/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/itinerary-lib-test/src/favicon.ico",
+              "projects/itinerary-lib-test/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/itinerary-lib/src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/nextsapien-component-lib/src/assets",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/swiper/swiper-bundle.min.css",
+              "./node_modules/nextsapien-component-lib/src/lib/shared-styles/styles.scss",
+              "./node_modules/nextsapien-component-lib/src/lib/shared-styles/common/overrides.scss",
+              "projects/itinerary-lib-test/src/styles.scss",
+              "projects/itinerary-lib/src/lib/itinerary-app/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "bd775369-037f-41c9-8d24-4bdfc19ec34a"
+  }
+}

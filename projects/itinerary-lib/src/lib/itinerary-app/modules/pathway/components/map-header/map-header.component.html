@@ -1,0 +1,16 @@
+<section [ngClass]="customcss">
+  <div class="flex-between md:gap-x-6">
+    <lib-icon-btn
+      (click)="goBack()"
+      class="bg-color mr-2 flex items-center justify-center rounded-full w-7 h-7 outset-shadow flexCenter"
+    >
+      arrow_back
+    </lib-icon-btn>
+    <div class="font-Calistoga tracking-wide">{{ title }}</div>
+    <div
+      class="discard cursor-pointer flex items-center justify-center text-sm"
+    >
+      {{ "IMAGE_CROPPER.DISCARD" | translate }}?
+    </div>
+  </div>
+</section>

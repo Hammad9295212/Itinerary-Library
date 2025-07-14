@@ -1,0 +1,104 @@
+.title {
+  text-align: center;
+  font-family: 'Calistoga', serif;
+  margin-bottom: 20px;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.email {
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+.role {
+  font-size: 14px;
+  color: #c0c0c0;
+}
+
+.access-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+select {
+  background: transparent;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.copy-btn {
+  color: #f9f4d4;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.done-btn {
+  color: #f85f75;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.access-title {
+  font-size: var(--font-size-medium);
+}
+
+.person-name, .person-email {
+  font-size: var(--font-size-small);
+}
+
+.person-email {
+  font-weight: normal;
+}
+
+.role-text {
+  font-size: var(--font-size-small);
+  font-weight: normal;
+}
+
+.general-access-title {
+  font-size: var(--font-size-medium);
+  font-weight: 700;
+}
+
+.access-select {
+  border: none !important;
+  padding-right: 12px;
+  padding-left: 0px;
+  font-family: var(--font-gilroy-bold);
+  font-size: var(--font-size-small);
+}
+
+.permission-description {
+  font-size: var(--font-size-small);
+  color: white;
+}

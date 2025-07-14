@@ -1,0 +1,35 @@
+@use "../../../../_styles/colors" as *;
+
+$box-shadow-inset: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+$box-shadow-outer: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+.nav-bar {
+  background: $background-color-1;
+  box-shadow: $box-shadow-inset, $box-shadow-outer;
+}
+
+.navbra-logo {
+  height: 10px;
+  width: 50px;
+}
+
+.nav-main-bar {
+  min-width: 100% !important;
+  padding-right: 20px !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 130px;
+}
+
+.profile-icon {
+  position: absolute;
+  right: 10px;
+}

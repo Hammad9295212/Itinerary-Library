@@ -1,0 +1,50 @@
+<div class="relative min-h-screen">
+  <div class="z-auto">
+    <div class="pb-10">
+      <ng-container *ngIf="loading">
+        <lib-info-card-placeholder
+          [avatar]="true"
+          [count]="5"
+        ></lib-info-card-placeholder>
+      </ng-container>
+
+      <ng-template #actions>
+        <lib-menu-btn
+          (select)="handleMenueItemSelect()"
+          (click)="handleMenuClick()"
+          (change)="handleMenuItemChange()"
+          class="lib-menu-custom-class lib-menu-bg-none"
+          [disableTextShadow]="true"
+        >
+          <img [src]="ICONS['horizontalWhite']" alt="Horizontal divider" />
+        </lib-menu-btn>
+      </ng-template>
+
+      @if (!loading) {
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+          <ng-container *ngFor="let i of itineraryMembers">
+            <app-user-tile
+              [name]="i.memberName"
+              [email]="i.memberEmail"
+              [image]="i.memberPic"
+              [sufixTemplate]="actions"
+            >
+            </app-user-tile>
+          </ng-container>
+        </div>
+      }
+
+      <div class="flex px-4">
+        <img [src]="ICONS['invitePink']" />
+        <button class="pinkTextColor" (click)="navToListFriendUsers()">
+          Friend Request
+        </button>
+      </div>
+
+      <div class="border-t border-gray-700 mt-6 mb-6"></div>
+      <h2 class="commonInterests px-4 mb-4">Common Interests</h2>
+
+      <lib-selectable [options]="passions"></lib-selectable>
+    </div>
+  </div>
+</div>

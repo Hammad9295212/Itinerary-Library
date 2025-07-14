@@ -1,0 +1,16 @@
+<div class="ps-5 pe-5">
+  <app-header [heading]="'Comment Search'" (firstButton)="navToBack()"></app-header>
+  <p class="mt-2 mb-3">
+    Create and apply custom advance filters or select popular preset advance
+    filters.
+  </p>
+
+  <lib-filter-bar [filters]="filtersss" [savedFilters]="filtersss" [userFiltersList]="userFilterList"
+    [standardFilters]="filtersss" [showAllFilters]="true" (searchStringChange)="search($event)"
+    [activeFilter]="userFilterList[0]"></lib-filter-bar>
+
+  <div class="mt-5 ml-2" *ngFor="let c of visibleComments" (click)="viewReplies(c)">
+    <img class="w-100 mb-2" [src]="ICONS['divider']" alt="divider" />
+    <span [innerHtml]="c"></span>
+  </div>
+</div>

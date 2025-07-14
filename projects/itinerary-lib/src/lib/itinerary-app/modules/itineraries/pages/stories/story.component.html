@@ -1,0 +1,17 @@
+<div class="draggable-scroll-container w-full ">
+  <div class="scrollable-content " [ngStyle]="{ height: windowHeight + 'px' }" libDraggableScroll
+    [direction]="direction" [animationEffect]="'coverflow'" [transition]="true" [freeMode]="freeMode"
+    [slidesPerView]="1.2" [includeSidePadding]="false">
+    <div class="slides m-0 " *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+      <div class="z-auto ">
+        <div class="p-0 m-0">
+          <app-custom-story-card [libMenuItem]="libMenuItem"> </app-custom-story-card>
+        </div>
+        <lib-popup [isOpen]="modalService.toggleModal">
+          <app-report-itinerary-modal [popupTitle]="'Report Media'"></app-report-itinerary-modal>
+        </lib-popup>
+      </div>
+    </div>
+  </div>
+
+</div>

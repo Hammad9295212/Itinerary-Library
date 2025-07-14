@@ -1,0 +1,12 @@
+<div class="bottom-nav-main">
+  <app-bottom-navigation-items
+    (click)="navigate(bottomNavigationService.bottomNavList, item)"
+    *ngFor="let item of bottomNavigationService.bottomNavList"
+    [cssClass]="item.cssClass"
+    [routerLink]="item.routerLink"
+    [label]="item.label"
+    [iconPath]="
+      item.cssClass == 'active' ? item.clickedIconPath : item.iconPath
+    "
+  />
+</div>

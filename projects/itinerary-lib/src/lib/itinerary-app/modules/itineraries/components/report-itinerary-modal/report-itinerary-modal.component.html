@@ -1,0 +1,14 @@
+<div class="report-itineraies max-padd-container">
+  <h1 class="p-4">{{ popupTitle | translate }}</h1>
+  <div>
+    <lib-form-field [formFieldControl]="radio" [submitted]="false" [required]="true" [maxLength]="10"
+      [type]="FormFieldType.radio" [options]="options" [radioDeselectable]="false"></lib-form-field>
+  </div>
+
+  <lib-text-box class="text-feild" [class.show]="selectedItem == 9" [class.hide]="selectedItem != 9"
+    [label]="'Please brief your issue'"></lib-text-box>
+  <div class="flex justify-center gap-10 mt-5">
+    <button class="custom-flat-button font-[Calistoga]" (click)="closeModal()">{{ "COMMON.CANCEL" | translate}}</button>
+    <button class="custom-flat-button-highlighted-font font-[Calistoga]"  (click)="onOk()">{{ "REPORT" | translate }}</button>
+  </div>
+</div>

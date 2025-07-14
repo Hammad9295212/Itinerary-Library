@@ -1,0 +1,35 @@
+.report-itineraies {
+  width: 330px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.report-itineraies h1 {
+  font-family: "Calistoga";
+}
+
+input {
+  box-shadow: none;
+}
+
+.text-feild {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.text-feild.show {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.text-feild.hide {
+  opacity: 0;
+  max-height: 0;
+}

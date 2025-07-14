@@ -1,0 +1,17 @@
+@use "../../../../_styles/colors" as *;
+@use "../../../../_styles/fonts" as *;
+
+.filter-class {
+  font-family: $filter-font !important;
+  font-size: 12px !important;
+}
+
+.no-visual-class {
+  color: $text-color-3;
+  font-family: Calistoga;
+  font-size: 19.692px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  text-transform: capitalize;
+}

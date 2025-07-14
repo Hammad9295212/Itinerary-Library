@@ -1,0 +1,50 @@
+<!-- @if (draftItinerary.length === 0) { -->
+<div class="flex items-center justify-center flex-col mt-4">
+  <div class="w-full font-[Calistoga]"><lib-icon-button (click)="handleAddButton()" buttonText="Create new Itinerary"></lib-icon-button></div>
+  <div class="w-full flex justify-between text-[11.5px] mt-[18.5px] mb-[18.5px]">
+      <div>{{ "ITINERARY.MY_CREATIONS" | translate }}</div>
+      <a (click)="navigateArchives()" class="flex gap-[4px] archives-link cursor-pointer"><img [src]="ICONS['archives']" alt="map" loading="lazy" /> {{"MAIN_ARCHIVES.ARCHIVES" | translate }}</a>
+  </div>
+  <ng-container *ngIf="!loading && ((libMenuItems?.length ?? 0) > 0)">
+      <div class="pb-10 w-full">
+        <div
+          class="grid-columns sm:mt-3 md:mt-10 grid grid-cols-1 md:grid-cols-3 sm:gap-y-5 md:gap-y-10 gap-x-10"
+        >
+          <ng-container *ngFor="let item of libMenuItems; let i = index">
+            <app-cutom-card
+              [libMenuItem]="libMenuItem"
+              [cardData]="item"
+              [isDraft]="false"
+              [itineraryStarted]="true"
+              [displayPublishStatus]="true"
+              (menuClicked)="menuClicked($event)"
+            ></app-cutom-card>
+          </ng-container>
+        </div>
+      </div>
+  </ng-container>
+  <ng-container *ngIf="!loading && libMenuItems?.length === 0">
+    <img [src]="ICONS['map']" alt="map" loading="lazy" />
+    <h3
+      class="mt-2 font-Calistoga font-normal text-[23px] leading-[160%] tracking-[0px]"
+    >
+      {{ "ITINERARY.ITENARY_NOT_FOUND" | translate }}
+    </h3>
+    <p class="mt-2 mb-2">{{ "ITINERARY.CREATE_ITENARY_MESSAGE" | translate }}</p>
+  </ng-container>
+ 
+  <div *ngIf="openActionMenu" class="fixed inset-0 bg-black/50 z-40 flex flex-col justify-end">
+    <div class="pl-4 pr-4 mb-2">
+      <ng-container *ngFor="let singleActionItem of createActionMenuItems;">
+        <lib-action-card
+          (actionCardClicked)="actionCardClicked()"
+          [actionName]="singleActionItem.actionItem"
+          [icon]="singleActionItem.icon"
+          [title]="singleActionItem.title"
+          [description]="singleActionItem.description"
+        ></lib-action-card>
+      </ng-container>
+      <lib-primary-btn (click)="hideActionMenu()">{{"ITINERARY.BACK" | translate }}</lib-primary-btn>
+    </div>
+  </div>
+</div>

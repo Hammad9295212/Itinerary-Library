@@ -1,0 +1,36 @@
+@use "../../../../_styles/colors" as *;
+
+$secondary-color: rgba(255, 255, 255, 0.7);
+$box-shadow: rgba(203, 199, 209, 0.25);
+$shadow-color-dark: rgba(17, 16, 20, 0.65);
+
+.side-nav {
+  background: $background-color-1;
+  margin-top: 30px;
+  box-shadow: -2px -5px 7px 0px $box-shadow inset;
+  filter: drop-shadow(-3.172px -3.172px 10.15px $box-shadow)
+    drop-shadow(6.978px 6.344px 17.128px $shadow-color-dark) !important;
+  ul {
+    li {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px 70px;
+
+      a {
+        font-family: "Calistoga";
+        opacity: 50%;
+      }
+    }
+  }
+}
+
+.active {
+  color: $text-color-3 !important;
+  border-bottom: 2px solid $secondary-color;
+}
+
+.active {
+  opacity: 100% !important;
+}

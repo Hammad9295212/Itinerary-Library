@@ -1,0 +1,22 @@
+@use "../../../../_styles/colors" as *;
+
+.search-history-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.search-history-bar-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-history-text {
+  margin-left: 10px;
+  margin-top: 2px;
+  font-weight: lighter;
+  color: $text-color-6;
+  font-size: var(--font-size-medium);
+}

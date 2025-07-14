@@ -1,0 +1,14 @@
+<div
+  class="px-4 py-1 text-[11.49px] rounded-full flex items-center gap-2 text-sm cursor-pointer transition-all bg-[#413F47]"
+  (click)="!selected && toggleSelection()"
+>
+  <span class="badge-label font-[Gilroy]">{{ label }}</span>
+
+  <button
+    *ngIf="selected"
+    class="ml-2 text-xs rounded-full hover:bg-white/20"
+    (click)="toggleSelection(); $event.stopPropagation();"
+  >
+    ✕
+  </button>
+</div>

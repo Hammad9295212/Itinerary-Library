@@ -1,0 +1,38 @@
+<nav class="nav-bar text-white fixed top-0 left-0 w-full z-50">
+  <div class="nav-main-bar">
+    <div class="flex ml-2">
+      <img class="navbar-logo" [ngSrc]="ICONS['logo']" alt="logo" />
+    </div>
+    <div class="sub-nav mx-auto">
+      <div *ngFor="let item of navigationItems">
+        <app-bottom-navigation-items
+          [label]="item.label | translate"
+          [iconPath]="item.iconPath"
+        ></app-bottom-navigation-items>
+      </div>
+      <div>
+        <lib-search-bar
+          class="search-field"
+          [placeholderText]="'NAVBAR.SEARCH' | translate"
+          (searchStringChange)="handleSearchStringChange($event)"
+          (cleared)="clear()"
+          [searchIcon]="ICONS['dashboardSearch']"
+        >
+        </lib-search-bar>
+      </div>
+    </div>
+    <div class="profile-icon ml-auto mt-1">
+      <lib-menu-btn
+        menuDirection="rtl"
+        [menuBtnImgUrl]="
+          'https://semantic-ui.com/images/avatar2/large/matthew.png'
+        "
+        [hasNotification]="true"
+        [menuBtnNotificationIconUrl]="ICONS['notBlip']"
+        [menuItems]="menuItems"
+        class="dashboard-menu"
+      >
+      </lib-menu-btn>
+    </div>
+  </div>
+</nav>

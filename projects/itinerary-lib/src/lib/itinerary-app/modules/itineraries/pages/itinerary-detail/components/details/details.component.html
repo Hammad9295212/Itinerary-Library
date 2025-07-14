@@ -1,0 +1,89 @@
+<div class="px-5 py-4 overflow-y-auto">
+  <h2 class="f-[13px]">Created By</h2>
+
+  <div class="my-5 flex justify-between">
+    <div class="flex items-center gap-2" (click)="navToUserProfile()">
+      <img
+        loading="lazy"
+        height="12"
+        width="12"
+        [src]="ICONS['userRedFilled']"
+        alt=""
+        class="mb-auto"
+      />
+      <p class="user-name">Jonathan</p>
+      <p class="last-seen">
+        11 {{ "DATE_TIME.HOURS" | translate }}
+        {{ "DATE_TIME.AGO" | translate }}
+      </p>
+    </div>
+    <div class="flex cursor-pointer" (click)="navigateToAuthorHistory()">
+      <p class="history mr-1">{{ "ITINERARY_DETAIL.HISTORY" | translate }}</p>
+      <img loading="lazy" height="5" width="5" [src]="ICONS['rightArrow']" alt="right arrow" />
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <h2 class="f-[13px] mt-5 mb-3">
+    {{ "ITINERARY_DETAIL.ITINERARY_PASSIONS" | translate }}
+  </h2>
+  <div class="flex flex-wrap gap-2">
+    <lib-selectable
+      [options]="passions"
+      [maxSelectionPossible]="passions.length"
+    ></lib-selectable>
+  </div>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+  <div class="mt-4">
+    <p class="bottom-section-heading mt-2 mb-1">
+      {{ "ITINERARY_DETAIL.UPVOTES" | translate }}
+    </p>
+
+    <div class="comment-card text-white py-2">
+      <p class="text-xs">4.6k {{ "ITINERARY_DETAIL.PEOPLE" | translate }}</p>
+      <app-user-stack-tile
+        label="4.6k people"
+        [buttonText]="'ITINERARY_SUMMARY.VIEW_MORE' | translate"
+        (onClick)="navigateToUpotes()"
+        [maxVisible]="4"
+      ></app-user-stack-tile>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <div class="mt-4">
+    <p class="bottom-section-heading mt-2 mb-1">
+      {{ "ITINERARY_DETAIL.WATCHING" | translate }}
+    </p>
+
+    <app-user-stack-tile label="17 people" [buttonText]="'ITINERARY_SUMMARY.VIEW_MORE' | translate" [maxVisible]="4"
+      (onClick)="handleUserStackTileClick('watching')"></app-user-stack-tile>
+  </div>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <div class="mt-5 flex justify-between">
+    <lib-menu-btn (click)="navToComments()">
+      <span class="inline-flex items-center gap-2">
+        <img loading="lazy" [ngSrc]="ICONS['message']" height="12" width="13" />
+        <span class="inline-block">{{
+          "ITINERARY_DETAIL.COMMENTS" | translate
+        }}</span>
+        <p class="inline-block">17</p>
+      </span>
+    </lib-menu-btn>
+
+    <lib-menu-btn (click)="navToBranch()">
+      <span class="inline-flex items-center gap-2">
+        <img loading="lazy" [ngSrc]="ICONS['branch']" height="12" width="13" />
+        <span class="inline-block">{{
+          "ITINERARY_DETAIL.BRANCHES" | translate
+        }}</span>
+        <p class="inline-block">4</p>
+      </span>
+    </lib-menu-btn>
+  </div>
+</div>

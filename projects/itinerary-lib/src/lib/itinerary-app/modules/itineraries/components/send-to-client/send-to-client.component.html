@@ -1,0 +1,10 @@
+<div class="delete-modal">
+  <h3 class="text-center mb-[25px] font-[Calistoga]">{{ "SNACKBAR.SUGGEST_TO_CLIENT" | translate }}</h3>
+  
+  <lib-matching-clients (clientSelectionChanged)="onClientSelectionChanged($event)"></lib-matching-clients>
+
+  <div class="flex justify-center gap-10 mt-5">
+    <button class="custom-flat-button font-[Calistoga]" (click)="closeSendClientModal()">{{ "COMMON.CANCEL" | translate}}</button>
+    <button class="custom-flat-button-highlighted-font font-[Calistoga]"  (click)="submitSendClient()">{{ "COMMON.SEND" | translate }}</button>
+  </div>
+</div>

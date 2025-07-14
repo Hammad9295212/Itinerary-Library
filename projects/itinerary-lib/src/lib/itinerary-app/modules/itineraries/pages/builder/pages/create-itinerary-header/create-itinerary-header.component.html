@@ -1,0 +1,26 @@
+<div [class]="'bottom-rounded-container fixed top-0 z-10 ' + class">
+  <lib-percentage-bar
+    class="primary-percentage-bar"
+    [value]="progressBarValue"
+  ></lib-percentage-bar>
+  <ng-template #suffix>
+    <span class="discard" (click)="showPopup()">Discard?</span>
+  </ng-template>
+  <lib-popup
+    [isOpen]="isOpen"
+    [icon]="ICONS['infoBig']"
+    cancelButton="Cancel"
+    confirmButton="Yes"
+    message="Are you sure you want to discard the itinerary creating progress?"
+    (modalConfirm)="hidePopupAndNavigate()"
+    (modalDismiss)="hidePopup()"
+  >
+  </lib-popup>
+
+  <app-header
+    cssClass="!pt-2 pl-3 pr-3"
+    (firstButton)="back()"
+    [heading]="heading"
+    [headerSuffixTemplate]="suffix"
+  ></app-header>
+</div>

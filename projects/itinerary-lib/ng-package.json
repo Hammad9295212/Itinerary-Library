@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/itinerary-lib",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["src/lib"]
+  },
+  "assets": [
+    "src/lib/itinerary-app/styles.scss",
+    "src/assets",
+    "tailwind.config.js",
+    "src/lib/itinerary-app/_styles"
+  ]
+}

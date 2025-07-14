@@ -1,0 +1,25 @@
+<div class="pl-4 pr-4">
+  <app-header heading="Friend Requests" (firstButton)="backButton()"></app-header>
+
+  <p class="interestedPeopleHeading mt-3">Invites Sent (3)</p>
+
+  <ng-container *ngIf="loading">
+    <lib-info-card-placeholder [avatar]="true" [count]="5"></lib-info-card-placeholder>
+  </ng-container>
+
+  <ng-template #sufixAction>
+    <div class="flex">
+      <img [src]="ICONS['closePink']" alt="Invite label" />
+      <button class="pinkTextColor">Revoke</button>
+    </div>
+  </ng-template>
+
+  @if (!loading) {
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+    <ng-container *ngFor="let i of itineraryMembers">
+      <app-user-tile [name]="i.memberName" [email]="i.memberEmail" [image]="i.memberPic"
+        [sufixTemplate]="sufixAction"></app-user-tile>
+    </ng-container>
+  </div>
+  }
+</div>

@@ -1,0 +1,28 @@
+.side-bar-heading-bar .mat-ripple {
+  box-shadow: none !important;
+}
+
+.side-bar-heading-bar .header-btn:last-child {
+  box-shadow: none !important;
+  margin-right: 10px !important;
+  margin-top: 5px !important;
+}
+
+.side-bar-heading-bar .lib-button-container {
+  box-shadow: none !important;
+}
+
+.filter-side-bar {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+.filter-side-bar .selectable-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.filter-side-bar .btn-selectable {
+  height: 100% !important;
+}

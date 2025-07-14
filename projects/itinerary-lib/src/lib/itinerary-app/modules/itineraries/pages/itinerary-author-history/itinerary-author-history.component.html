@@ -1,0 +1,73 @@
+<app-header heading="History" (firstButton)="back()"></app-header>
+<div class="my-5 flex flex-col gap-3 justify-between p-3">
+  <div class="flex items-center gap-2">
+    <img height="15" width="15" [src]="ICONS['user']" alt="" />
+    <p class="text-white">Jonathan</p>
+    <p class="last-seen">
+      11 {{ "DATE_TIME.HOURS" | translate }}
+      {{ "DATE_TIME.AGO" | translate }}
+    </p>
+  </div>
+  <div class="flex row gap-2">
+    <p class="small-text">Added New</p>
+    <p class="small-text text-pink-600">Itinerary Passions</p>
+  </div>
+  <lib-selectable [options]="passions" [maxSelectionPossible]="0"></lib-selectable>
+
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <div class="flex items-center gap-2 mt-2">
+    <img height="15" width="15" [src]="ICONS['user']" alt="" />
+    <p class="text-white">Jonathan</p>
+    <p class="last-seen">
+      11 {{ "DATE_TIME.DAYS" | translate }}
+      {{ "DATE_TIME.AGO" | translate }}
+    </p>
+  </div>
+  <div class="flex row gap-2">
+    <p class="small-text">Added New</p>
+    <p class="small-text text-pink-600">Location</p>
+  </div>
+  <div class="flex row gap-2 items-center">
+    <img height="13" width="13" [src]="ICONS['location']" alt="" />
+    <p class="small-text text-white">London Bridge View Restaurant</p>
+  </div>
+  <div class="border-t border-gray-700 mt-2"></div>
+
+
+  <div class="flex items-center gap-2 mt-2">
+    <img height="15" width="15" [src]="ICONS['user']" alt="" />
+    <p class="text-white">Jonathan</p>
+    <p class="last-seen">
+      11 {{ "DATE_TIME.HOURS" | translate }}
+      {{ "DATE_TIME.AGO" | translate }}
+    </p>
+  </div>
+  <div class="flex row gap-2">
+    <p class="small-text">Changed</p>
+    <p class="small-text text-pink-600">Itinerary Title</p>
+  </div>
+  <div class="flex row gap-2 items-center">
+    <p class="small-text">From</p>
+    <p class="small-text text-white">Adventuretour</p>
+  </div>
+  <div class="flex row gap-5 items-center">
+    <p class="small-text">To</p>
+    <p class="small-text text-white">Adventure Tour</p>
+  </div>
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <div class="flex items-center gap-2 mt-2">
+    <img height="15" width="15" [src]="ICONS['user']" alt="" />
+    <p class="text-white">Jonathan</p>
+    <p class="last-seen">
+      11 {{ "DATE_TIME.HOURS" | translate }}
+      {{ "DATE_TIME.AGO" | translate }}
+    </p>
+  </div>
+  <div class="flex row gap-2">
+    <p class="small-text">Created using</p>
+    <p class="small-text text-pink-600">Custom Itinerary</p>
+  </div>
+  <div class="border-t border-gray-700 mt-2"></div>
+</div>

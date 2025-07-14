@@ -1,0 +1,32 @@
+[
+  {
+    "memberName": "Makenna Levin",
+    "memberEmail": "levinmakk@mail.com",
+    "memberPic": "/assets/images/image1.png",
+    "added": true
+  },
+  {
+    "memberName": "Jakob Vaccaro",
+    "memberEmail": "jackobvaccaro@mail.com",
+    "memberPic": "/assets/images/image2.png",
+    "added": false
+  },
+  {
+    "memberName": "Alfredo Bergson",
+    "memberEmail": "alfredobergson@mail.com",
+    "memberPic": "/assets/images/image3.png",
+    "added": true
+  },
+  {
+    "memberName": "Reo Galla",
+    "memberEmail": "reogalla@mail.com",
+    "memberPic": "/assets/images/image2.png",
+    "added": true
+  },
+  {
+    "memberName": "Alfonso Lipshutz",
+    "memberEmail": "alfonsolipshutz@mail.com",
+    "memberPic": "/assets/images/image3.png",
+    "added": false
+  }
+]

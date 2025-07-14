@@ -1,0 +1,14 @@
+<div>
+  <div class="clear-history-main" (click)="toggleModal()">
+    <span>
+      <img [ngSrc]="ICONS['deleteCross']" height="14" width="15" />
+    </span>
+    <span class="clear-history-label">Clear History</span>
+  </div>
+  <lib-popup
+    [isOpen]="modalClearHistoryService.toggleModal"
+  >
+    <lib-clear-history-popup (clearHistory)="clearHistory()"></lib-clear-history-popup>
+  </lib-popup>
+  <lib-section-separator></lib-section-separator>
+</div>

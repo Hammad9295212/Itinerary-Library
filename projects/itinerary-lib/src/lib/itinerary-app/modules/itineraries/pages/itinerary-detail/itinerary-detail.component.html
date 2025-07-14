@@ -1,0 +1,37 @@
+<div>
+  <ng-template #menuItems>
+    <lib-menu-btn [menuItems]="dropdownMenuItems" class="lib-menu-bg-none">
+      <img [src]="ICONS['horizontal']" alt="right-icon" />
+    </lib-menu-btn>
+  </ng-template>
+
+  <app-header
+    [headerSuffixTemplate]="menuItems"
+    heading="Adventure Tour"
+    (firstButton)="back()"
+    [titleIcon]="ICONS['editPink']"
+    (titleIconClick)="navToMembers()"
+  ></app-header>
+  <lib-tab-menu
+    [items]="tabMenuItems"
+    [activeItem]="activeItem"
+    (activeItemChange)="onActiveItemChange($event)"
+    #libTabMenu
+  ></lib-tab-menu>
+
+  <div class="minScreen">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<ng-container>
+  <lib-popup
+    [isOpen]="isModalOpen"
+    confirmButton="Delete"
+    cancelButton="Keep"
+    title="Delete Itinerary"
+    message="Are you sure you want to permanently delete this history?"
+    (modalConfirm)="onModalConfirmed()"
+    (modalDismiss)="onModalDismissed()"
+  ></lib-popup>
+</ng-container>

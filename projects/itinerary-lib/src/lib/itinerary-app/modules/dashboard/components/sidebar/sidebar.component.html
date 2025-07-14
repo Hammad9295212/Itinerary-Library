@@ -1,0 +1,20 @@
+<aside class="side-nav text-white w-64 h-screen fixed top-0 left-0 z-40">
+  <div class="px-2">
+    <app-header
+      cssClass="side-bar-heading-bar"
+      [heading]="'SIDEBAR.ITINERARIES' | translate"
+    ></app-header>
+  </div>
+  <ul class="space-y-2">
+    <li *ngFor="let item of sideBarItem" (click)="selectItem(item)">
+      <a
+        [routerLink]="item.url"
+        [class]="item.cssClass + ' block p-3 text-center'"
+        >{{ item.name | translate }}</a
+      >
+      <div *ngIf="item.id === 1 && item.selected">
+        <app-filter-menu [cssClass]="filterClass"></app-filter-menu>
+      </div>
+    </li>
+  </ul>
+</aside>

@@ -1,0 +1,29 @@
+<div *ngIf="!loading" [class]="'flex items-center ' + class">
+  <ng-container *ngFor="let img of visibleImages; let i = index">
+    <div class="rounded-full overflow-hidden relative" [ngStyle]="{
+        height: size + 'px',
+        width: size + 'px',
+        'margin-left': i === 0 ? '0px' : -size * 0.45 + 'px',
+      }">
+      <img [src]="img" alt="Avatar" loading="lazy" class="w-full h-full object-cover" (load)="onImageLoad(i)"
+        (error)="onImageLoad(i)" />
+      <div *ngIf="!imageLoaded[i]" class="absolute inset-0 flex items-center justify-center bg-gray-200">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div *ngIf="remainingCount > 0" class="rounded-full relative flex items-center justify-center" [ngStyle]="{
+      height: size + 'px',
+      width: size + 'px',
+      'margin-left': visibleImages.length > 0 ? -size * 0.45 + 'px' : '0px',
+      'background-color': 'rgba(81, 78, 87, 1)',
+    }">
+    <p style="font-size: clamp(7px, 3vw, 15px)" class="f-gilroy-regular">
+      {{ remainingCount }}+
+    </p>
+  </div>
+  <div class="absolute z-10" [style.left.px]="maxVisible * 26">
+    <lib-selectable *ngIf="isSelectableVisible" [options]="[selectableOption]"></lib-selectable>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div [class]="cssClass + ' filter-menu py-3'">
+  <lib-selectable
+    class="test"
+    (click)="changeSelection()"
+    (selectionchange)="changeSelection()"
+    [formControl]="filterControl"
+    [options]="options"
+    [singleSelectionOnly]="true"
+  >
+  </lib-selectable>
+  <lib-icon-btn (click)="handleFilterClick()">
+    <img [ngSrc]="ICONS['filter']" height="15" width="15" />
+  </lib-icon-btn>
+</div>

@@ -1,0 +1,86 @@
+[
+  {
+    "pageUrl": "",
+    "pageContent": [
+      "Share your travel experiences.",
+      "Express your opinions about the itinerary.",
+      "Discuss the best moments of the trip.",
+      "Give feedback on the journey.",
+      "Rate the itinerary and its stops.",
+      "Post suggestions for improvement.",
+      "Talk about the scenic routes.",
+      "Comment on the travel pace.",
+      "Mention any logistical challenges.",
+      "Share memorable interactions with locals.",
+      "Highlight hidden gems along the route.",
+      "Express excitement for future travels.",
+      "Detail your favorite itinerary stops.",
+      "Recommend alternative activities.",
+      "Share tips for fellow travelers."
+    ],
+    "breadCrumbItems": ["Itinerary", "Comment"]
+  },
+  {
+    "pageUrl": "",
+    "pageContent": [
+      "Discover unique travel destinations.",
+      "Explore offbeat paths and routes.",
+      "Find itineraries that match your style.",
+      "Learn about local cultures along the way.",
+      "Uncover scenic spots not found in guidebooks.",
+      "Read about adventurous journeys.",
+      "Delve into immersive travel experiences.",
+      "Navigate through diverse landscapes.",
+      "Examine historical travel trails.",
+      "Discover popular tourist attractions.",
+      "Uncover hidden retreats.",
+      "Explore gastronomic journeys.",
+      "Investigate eco-friendly travel options.",
+      "Study itineraries from travel experts.",
+      "Embark on a visual journey through images."
+    ],
+    "breadCrumbItems": ["Itinerary", "Explore"]
+  },
+  {
+    "pageUrl": "",
+    "pageContent": [
+      "Meet fellow travel enthusiasts.",
+      "Connect with members who share your interests.",
+      "Explore profiles of journey participants.",
+      "Share your travel stories with the group.",
+      "Discuss planning tips with other members.",
+      "Exchange recommendations for local cuisine.",
+      "Find travel buddies for future trips.",
+      "Learn from seasoned travelers in the community.",
+      "Discuss travel hacks and insider tips.",
+      "Collaborate on planning new itineraries.",
+      "Share memorable travel photos.",
+      "Offer advice on travel logistics.",
+      "Network with adventure seekers.",
+      "Engage in group discussions.",
+      "Celebrate diverse travel experiences."
+    ],
+    "breadCrumbItems": ["Itinerary", "Members"]
+  },
+  {
+    "pageUrl": "",
+    "pageContent": [
+      "Get a comprehensive itinerary overview.",
+      "Review day-to-day travel plans.",
+      "Analyze travel costs and budgets.",
+      "Study the detailed schedule of activities.",
+      "Review transportation arrangements.",
+      "Examine accommodation details.",
+      "Review dining and culinary stops.",
+      "Understand local weather patterns for travel dates.",
+      "Review alternative itinerary options.",
+      "Analyze pros and cons of travel routes.",
+      "Access historical data on travel trends.",
+      "Plan your journey with a detailed breakdown.",
+      "Compare different travel itineraries.",
+      "Inspect route maps and schedules.",
+      "Review customer testimonials and feedback."
+    ],
+    "breadCrumbItems": ["Itinerary", "Detail"]
+  }
+]

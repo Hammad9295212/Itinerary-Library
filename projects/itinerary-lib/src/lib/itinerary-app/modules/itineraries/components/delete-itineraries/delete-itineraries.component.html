@@ -1,0 +1,28 @@
+  <div class="delete-modal text-center" [formGroup]="deleteForm">
+    <img [ngSrc]="ICONS['delete']" height="46" width="46" class="mx-auto" />
+    
+    <h3 class="font-[Calistoga] mt-5">
+      {{ "SNACKBAR.DELETE_ITINERARY" | translate }}
+    </h3>
+    
+    <p class="text-white mb-2 max-w-[80%] ml-auto mr-auto mt-1 text-[10px]">
+      {{ "ADMIN.GRID.PERMANENT_DELETION" | translate }}
+    </p>
+    
+    <div class="check-box-field flex items-center justify-center gap-2">
+      <lib-dashed-checkbox formControlName="confirmDelete" class="check-box"></lib-dashed-checkbox>
+      <label class="text-[8px]">{{ "ADMIN.GRID.DELETE_ITEM_WARNING" | translate }}</label>
+    </div>
+    <ng-container *ngIf="showErrorMessage">
+      <p class="error-message text-[8px]">{{ "MAIN_ARCHIVES.DELETE_ERROR_MESSAGE" | translate }}</p>
+    </ng-container>
+    
+    <div class="flex justify-center gap-10 mt-5">
+      <button class="custom-flat-button font-[Calistoga]" (click)="closeModal()">
+        {{ "COMMON.KEEP" | translate }}
+      </button>
+      <button class="custom-flat-button-highlighted-font font-[Calistoga]" (click)="deleteItinerary()">
+        {{ "COMMON.DELETE" | translate }}
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+@use "../../../../_styles/colors" as *;
+
+.search-sub-heading {
+  color: $text-color-4;
+  font-size: var(--font-size-small);
+}

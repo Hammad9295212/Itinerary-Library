@@ -1,0 +1,35 @@
+<div class="pl-2 pr-4">
+  <div class="minScreen pl-4 pr-4">
+      <ng-template #search>
+        <img [src]="ICONS['search']" alt="right-icon" (click)="searchButtonClick()" />
+      </ng-template>
+      <app-header
+        (firstButton)="backButtonClick()"
+        [heading]="'MAIN_ARCHIVES.ARCHIVES' | translate"
+        [headerSuffixTemplate]="search"
+      ></app-header>
+      <app-custom-heading-with-button
+        cssClass="archive-css"
+        [heading]="'MAIN_ARCHIVES.NOTE_ARCHIVED' | translate"
+        [buttonText]="'MAIN_ARCHIVES.CLEAR_ALL' | translate"
+        [buttonIcon]="ICONS['deleteSec']"
+        (buttonClick)="buttonClicked()"
+      ></app-custom-heading-with-button>
+      <div *ngIf="!loading && itineraries.length" class="grid-columns sm:mt-3 md:mt-10 grid grid-cols-1 md:grid-cols-3 sm:gap-y-5 md:gap-y-10 gap-x-10">
+        <ng-container *ngFor="let itinerary of itineraries;">
+          <app-cutom-card 
+          [cardData]="itinerary"
+          [libMenuItem]="libMenuItem"
+          (menuClicked)="menuClicked($event)"
+          ></app-cutom-card>
+        </ng-container>
+      </div>
+      <div *ngIf="!loading && !itineraries.length" class="text-center">
+        {{ "MAIN_ARCHIVES.NO_ARCHIVED_FOUND" | translate }}
+      </div>
+  </div>
+  <lib-popup [isOpen]="modalService.toggleModal">
+    <app-delete-itineraries (deleteItineraryEvent)="deleteItinerary()"></app-delete-itineraries>
+  </lib-popup>
+</div>
+<app-footer></app-footer>

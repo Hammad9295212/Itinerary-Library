@@ -1,0 +1,58 @@
+* {
+  font-family: var(--font-gilroy-regular);
+}
+.main-itini-preview,
+.tracking-bottom-com {
+  font-family: Gilroy-Regular !important;
+}
+
+.tracking-bottom-com,
+.text {
+  font-family: Gilroy-Regular !important;
+  font-size: 12px !important;
+}
+
+.bottom-section-heading {
+  /* People who might want to join this itinerary */
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13.13px;
+  line-height: 160%;
+  /* identical to box height, or 21px */
+
+  /* Dark/White (100%) */
+  color: #ffffff;
+}
+
+.view-more-div {
+  font-size: 14px;
+}
+
+.view-more-text {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  color: #fe3c72;
+  margin-left: 10px;
+}
+
+.view-more {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #fe3c72;
+  margin-left: 10px;
+}
+
+.dotted-line {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  top: 10px;
+}
+
+.normal-text {
+  color: #ffffff;
+}

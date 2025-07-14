@@ -1,0 +1,58 @@
+<app-header (firstButton)="back()" heading="Create Itinerary"></app-header>
+<form [formGroup]="form" class="mb-32">
+  <div class="mt-4 ml-3 mr-2 mb-5">
+    <p class="mb-4">
+      Start creating your itinerary with a title and continue to the route
+      details.
+    </p>
+    <lib-text-box
+      formControlName="name"
+      class="textbox-1"
+      label="Itinerary Title"
+    ></lib-text-box>
+    <hr style="margin: 40px 0px 20px 0px" class="divider" />
+
+    <h1 class="text-lg font-Calistoga">Members</h1>
+    <p class="mb-4">The users included will effect the suggested activities.</p>
+    <lib-text-box class="textbox-1" label="User Search"></lib-text-box>
+    <app-users-stack [size]="41" class="mt-2"></app-users-stack>
+    <hr style="margin: 40px 0px 20px 0px" class="divider" />
+
+    <h1 class="text-lg font-Calistoga">Settings</h1>
+    <div class="mt-3 flex items-center justify-between">
+      <div style="width: 85%">
+        <h1>100% Match</h1>
+        <p>
+          Do all the members need to be interested in each experience for it to
+          be suggested?
+        </p>
+      </div>
+      <div style="width: 15%" class="flex justify-end">
+        <lib-dashed-checkbox
+          class="checkbox-sm"
+          formControlName="fullMatch"
+        ></lib-dashed-checkbox>
+      </div>
+    </div>
+    <div class="mt-3 flex items-center justify-between">
+      <div style="width: 85%">
+        <h1>Another Setting</h1>
+        <p>Lorem Ipsum</p>
+      </div>
+      <div style="width: 15%" class="flex justify-end">
+        <lib-dashed-checkbox
+          class="checkbox-sm"
+          formControlName="anotherSettings"
+        ></lib-dashed-checkbox>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="builder-footer">
+  <lib-footer-shared
+    (continueButtonClick)="create()"
+    [canContinue]="true"
+    continueButtonText="Continue"
+  ></lib-footer-shared>
+</div>

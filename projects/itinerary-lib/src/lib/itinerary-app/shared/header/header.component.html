@@ -1,0 +1,24 @@
+<div
+  [class]="
+    'header-main-bar pt-5 pb-5 mr-3 flex items-center justify-between ' +
+    cssClass
+  "
+>
+  <lib-icon-btn class="checkmark-icon-button" (click)="firstButtonClick()">
+    <img [ngSrc]="ICONS['back']" height="12" width="13" />
+  </lib-icon-btn>
+  <div class="flex">
+    <h4 class="mr-1">{{ heading }}</h4>
+    <img
+      *ngIf="titleIcon"
+      [src]="ICONS['editPink']"
+      (click)="onTitleIconClick()"
+      height="8"
+      width="8"
+    />
+  </div>
+  <ng-container *ngIf="headerSuffixTemplate">
+    <ng-container *ngTemplateOutlet="headerSuffixTemplate"></ng-container>
+  </ng-container>
+  <div *ngIf="!headerSuffixTemplate"></div>
+</div>

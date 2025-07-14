@@ -1,0 +1,32 @@
+<div class="w-full">
+  <div class="fixed bottom-0 left-0 z-50 p-4 w-full">
+    <lib-toast [position]="StatusPosition.bottomLeft"></lib-toast>
+  </div>
+
+  <div class="w-full">
+    <div class="pb-10">
+      <app-header [isTextSearch]="false" heading="Comments" (firstButton)="backButton()"></app-header>
+
+      <div class="flex w-full items-center px-2">
+        <lib-text-box class="flex-1 w-full" [(ngModel)]="textModel" [includeEmojiPicker]="true"
+          [emojiPickerConfig]="emojiPickerConfig" [includeImageAttachment]="true">
+        </lib-text-box>
+
+        <button (click)="SaveComment()">
+          <img [src]="ICONS['submit']" class="w-15 h-15" />
+        </button>
+      </div>
+
+      <app-filter-menu (onFilterClick)="navToCommentSearch($event)"></app-filter-menu>
+      <div class="w-full">
+        <app-comment [libMenuItem]="libMenuItem" [commentsData]="commentData"></app-comment>
+      </div>
+
+      <lib-popup [isOpen]="modalService.toggleModal">
+        <app-report-itinerary-modal popupTitle="Report Comment"></app-report-itinerary-modal>
+      </lib-popup>
+    </div>
+  </div>
+</div>
+
+<lib-toastr-stack [config$]="config$"></lib-toastr-stack>

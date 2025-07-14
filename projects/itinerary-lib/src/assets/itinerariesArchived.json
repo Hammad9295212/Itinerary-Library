@@ -1,0 +1,93 @@
+[{
+    "id": "1",
+    "name": "Adventure tour",
+    "image": "/assets/images/map.png",
+    "description": "An Adventure tour",
+    "distance": "",
+    "distanceValue": "",
+    "startLocation": {
+        "coordinates": [33.719737, 73.049774],
+        "address": "Ginyaki"
+    },
+    "endLocation": {
+        "coordinates": [33.674677, 73.066213],
+        "address": "Hospital"
+    },
+    "routeTypes": [],
+    "routeRadius": 2,
+    "createdAt": "2025-06-27T10:17:10Z",
+    "visitingPlaces": [
+        {
+            "id": "itinerary-001",
+            "title": "Marylebone Food & Culture Tour",
+            "type": "restaurant",
+            "description": "A delightful journey through Marylebone's cafes, boutiques, and historical landmarks.",
+            "review": {
+                "id": "review-001",
+                "review": "Charming area with a mix of modern shops and historic streets. Highly recommended for walking tours.",
+                "rating": 4.7,
+                "placeId": "place-001",
+                "place": {
+                "id": "place-001",
+                "name": "Marylebone High Street",
+                "address": "Marylebone High St, London W1U, United Kingdom",
+                "lat": 51.5225,
+                "lon": -0.1527
+                }
+            },
+            "position": {
+                "lat": 51.5225,
+                "lon": -0.1527,
+                "address": "Marylebone, London, United Kingdom"
+            },
+            "interests": [
+                {
+                "label": "Food",
+                "value": "food"
+                },
+                {
+                "label": "Shopping",
+                "value": "shopping"
+                },
+                {
+                "label": "Culture",
+                "value": "culture"
+                }
+            ],
+            "members": [
+                {
+                "memberName": "Emily Clark",
+                "memberEmail": "emily@example.com",
+                "memberPic": "https://randomuser.me/api/portraits/women/68.jpg",
+                "added": true
+                },
+                {
+                "memberName": "James Smith",
+                "memberEmail": "james@example.com",
+                "memberPic": "https://randomuser.me/api/portraits/men/45.jpg",
+                "added": true
+                }
+            ],
+            "numberOfPlaces": 4,
+            "timeToSpend": "5 hours"
+        }
+    ],
+    "isCompleted": false,
+    "stats": {
+        "id": "itenarry-stat-id",
+        "itineraryId": "itenary-id",
+        "upvotes": 2400,
+        "downvotes": 0,
+        "shares": 200,
+        "views": 3000
+    },
+    "statsId": "itenarry-stat-id",
+    "user": {
+        "id": "user-id",
+        "name": "Jonathan",
+        "email": "jonathan@gmail.com",
+        "image": "/assets/images/user-image.png"
+    },
+    "isDraft": false,
+    "isArchived": true
+}]

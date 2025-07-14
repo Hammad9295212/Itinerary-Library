@@ -1,0 +1,40 @@
+@use "../../_styles/colors" as *;
+
+.btn-selectable {
+  padding: 0px !important;
+  font-size: 11px !important;
+  margin-right: 12px !important;
+  position: relative;
+  box-shadow: -4.1px -4.1px 13.13px -2.46px $box-shadow-5;
+  background-color: $background-color-1 !important;
+  color: $text-color-3 !important;
+}
+
+.selectable-container {
+  padding: 0 !important;
+}
+
+.btn-selectable.selected {
+  background: linear-gradient(
+    94.44deg,
+    $scroll-color 1.26%,
+    $cyrano-primary 100%
+  );
+}
+
+.filter-btn .lib-button-component .mat-ripple {
+  background: $background-color-1 !important;
+  border: none !important;
+}
+
+.filter-btn .lib-button-component .lib-button-container {
+  display: none !important;
+}
+
+.button-native {
+  background: transparent !important;
+}
+
+.btn-selectable[_ngcontent-ng-c3164006478] {
+  padding: 0 !important;
+}

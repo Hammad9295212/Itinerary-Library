@@ -1,0 +1,51 @@
+@use "../../../_styles/colors" as *;
+
+.profile-pic {
+  border-radius: 500px;
+  height: 79px !important;
+  width: 79px !important;
+}
+
+h3 {
+  font-family: Calistoga;
+  font-weight: 400;
+  font-size: 19.69px;
+  line-height: 25.6px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+h4 {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 13.13px;
+  line-height: 21px;
+  letter-spacing: 0%;
+}
+
+.icon {
+  width: 13px !important;
+  height: 13px !important;
+  top: 232.2px;
+  left: 77.13px;
+}
+
+hr {
+  width: 262.55999755859375;
+  height: 0.8205000162124634;
+  margin: 1.25rem 0.5rem;
+  opacity: 0.15;
+  border-radius: 6.83px;
+  background: rgba(220, 220, 220, 1);
+  box-shadow: 1.71px 1.71px 3.41px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: -1.71px -1.71px 3.41px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+span {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 9.85px;
+  line-height: 0px;
+  letter-spacing: 0%;
+  color: rgba(187, 186, 188, 1);
+}

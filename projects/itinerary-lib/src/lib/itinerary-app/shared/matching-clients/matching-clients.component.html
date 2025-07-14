@@ -1,0 +1,25 @@
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+<ng-container *ngIf="!loading" formArrayName="items">
+    <div class="clients-option-container" *ngFor="let singleClientMatch of matches;  let i = index">
+        <div class="clients-option-row flex justify-between gap-[35px] mb-[10px]">
+            <div class="clients-option-left-section sm:text-[10px] xs:text-[9px] flex items-center gap-[10px]">
+                <lib-dashed-checkbox [formControlName]="i" class="checkbox-sm"></lib-dashed-checkbox> {{singleClientMatch.matchPercentage}}% {{ "ITINERARY.MATCH_TEXT" | translate }}
+            </div>
+            <div class="flex">
+                <div class="flex flex-col justify-center text-right relative">
+                    <p class="sm:text-[10px] xs:text-[9px] text-white inline !px-0">{{singleClientMatch.memberName}}</p>
+                    <p class="sm:text-[10px] xs:text-[9px] absolute sm:mt-[20px] xs:mt-[19px] inline-block !px-0 right-0">for {{singleClientMatch.clientName}}</p>
+                </div>
+                <div class="flex">
+                    <div class="rounded-full overflow-hidden relative inline h-[41px] w-[41px]">
+                        <img [src]="singleClientMatch['clientPic']" alt="Avatar" loading="lazy" class="h-full w-full rounded-full object-cover"/>
+                    </div>
+                    <div class="rounded-full overflow-hidden relative inline h-[41px] w-[41px] ml-[-20px]">
+                        <img [src]="singleClientMatch['memberPic']" alt="Avatar" loading="lazy" class="h-full w-full rounded-full object-cover"/>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</ng-container>
+</form>

@@ -1,0 +1,61 @@
+<div class="ps-4 pe-4">
+  <app-header heading="Invite People" (firstButton)="backButton()"></app-header>
+
+  <lib-search-bar class="search-field" [placeholderText]="'Search people to invite' | translate"
+    (searchStringChange)="handleSearchStringChange($event)" (cleared)="clear()" [searchIcon]="ICONS['dashboardSearch']">
+  </lib-search-bar>
+
+  <h3 class="f-calistoga font-normal text-sm mt-4">Friends</h3>
+
+  <ng-template #sufixAction>
+    <div (click)="navToInvite()" class="flex">
+      <img [src]="ICONS['invitePink']" alt="Invite label" />
+      <button class="pinkTextColor">Invite</button>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="loading">
+    <lib-info-card-placeholder [avatar]="true" [count]="5"></lib-info-card-placeholder>
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      <ng-container *ngFor="let i of itineraryMembers">
+        <app-user-tile [name]="i.memberName" [email]="i.memberEmail" [image]="i.memberPic"
+          [sufixTemplate]="sufixAction"></app-user-tile>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <h3 class="f-calistoga font-normal text-sm mt-4">
+    People who might want to join this itinerary
+  </h3>
+
+  <ng-container *ngIf="loading">
+    <lib-info-card-placeholder [avatar]="true" [count]="5"></lib-info-card-placeholder>
+  </ng-container>
+
+  <ng-template #sufixAction2>
+    <div (click)="navToInvite()" class="flex">
+      <img [src]="ICONS['invitePink']" alt="Invite label" />
+      <button class="pinkTextColor">Invite</button>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="!loading">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      <ng-container *ngFor="let i of itineraryMembers">
+        <app-user-tile [name]="i.memberName" [email]="i.memberEmail" [image]="i.memberPic"
+          [sufixTemplate]="sufixAction2"></app-user-tile>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- Separator Line -->
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <p class="interestedPeopleHeading mt-3">Invites Sent</p>
+
+  <app-user-stack-tile label="16 People" [images]="images" buttonText="View Invites"
+    (onClick)="navToAllInvites()"></app-user-stack-tile>
+</div>

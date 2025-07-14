@@ -1,0 +1,45 @@
+<div class="ps-4 pe-4">
+  <app-header heading="Search For Friends" (firstButton)="backButton()"></app-header>
+
+  <lib-search-bar class="search-field" [placeholderText]="'Search people to invite' | translate"
+    (searchStringChange)="handleSearchStringChange($event)" (cleared)="clear()" (click)="navToSendRequest()"
+    [searchIcon]="ICONS['dashboardSearch']">
+  </lib-search-bar>
+
+  <h3 class="f-calistoga font-normal text-sm mt-4 mb-3">Suggested Requests</h3>
+
+  <ng-container *ngIf="loading">
+    <lib-info-card-placeholder [avatar]="true" [count]="5"></lib-info-card-placeholder>
+  </ng-container>
+
+  @if (!loading) {
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+    <ng-container *ngFor="let i of friends; let idx = index">
+      <ng-template #request>
+        <div (click)="sendRequest(idx)" class="flex">
+          <img [src]="ICONS['invitePink']" alt="Invite label" />
+          <button class="pinkTextColor">Request</button>
+        </div>
+      </ng-template>
+
+      <ng-template #requested>
+        <div class="flex">
+          <img [src]="ICONS['userAdded']" alt="Invite label" />
+          <button class="pinkTextColor">Requested</button>
+        </div>
+      </ng-template>
+
+      <app-user-tile [name]="i.memberName" [email]="i.memberEmail" [image]="i.memberPic"
+        [sufixTemplate]="i.added ? requested : request"></app-user-tile>
+    </ng-container>
+  </div>
+  }
+
+  <!-- Separator Line -->
+  <div class="border-t border-gray-700 mt-2"></div>
+
+  <p class="interestedPeopleHeading mt-4">Requests Sent</p>
+
+  <app-user-stack-tile label="16 People" [images]="images" buttonText="View Requests"
+    (onClick)="navToFriendRequests()"></app-user-stack-tile>
+</div>

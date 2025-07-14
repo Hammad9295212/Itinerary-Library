@@ -1,0 +1,17 @@
+.min-screen-main {
+  overflow-y: auto !important;
+}
+.bottom-padding {
+  min-height: 10px;
+}
+.min-screen {
+  padding-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .mobile-height-adjust {
+    height: calc(100% - 102px) !important;
+  }
+  .mobile-height-adjust-outer {
+    height: calc(100% - 103px) !important;
+  }
+}

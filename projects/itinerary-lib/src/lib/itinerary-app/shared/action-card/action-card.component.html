@@ -1,0 +1,22 @@
+<div
+  (click)="handleClick()"
+  class="action-main rounded-[6.56px] mb-[6.56px] p-5 flex items-center justify-between cursor-pointer transition-all duration-300"
+>
+  <div class="flex items-center gap-4">
+    <img [src]="icon" alt="icon" class="w-12 h-12" />
+    <div class="pr-2">
+      <h3 class="text-white font-semibold flex gap-[3px] font-[Gilroy] text-[13.13px]">
+        <span class="text-white">{{ title.split(' ')[0] }}</span>
+        <span class="text-pink-500">{{ title.split(' ').slice(1).join(' ') }}</span>
+      </h3>
+      <p class="text-white font-[Gilroy] text-[6.56px]">{{ description }}</p>
+    </div>
+  </div>
+  <div>
+    <div
+      class="w-8 h-8 rounded-full bg-[#2b2733] flex items-center justify-center"
+    >
+      <img src="assets/icons/right-arrow.svg" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<app-create-itinerary-header
+  [progressBarValue]="35"
+  heading="Suggested Events"
+></app-create-itinerary-header>
+<lib-map class="maps-100vh"></lib-map>
+<lib-bottom-modal
+  submitButtonTitle="Continue"
+  [showArrow]="true"
+  [(isOpen)]="isOpen"
+  [adaptToContentHeight]="true"
+  (submitModal)="navToNextPage()"
+>
+  <span class="text-center block"> Route radius </span>
+  <div class="flex justify-between mt-5 ml-4 mr-5">
+    <p class="text-white">Time from direct router</p>
+    <p class="text-white">1 minute</p>
+  </div>
+
+  <div class="mt-2">
+    <lib-range-selector></lib-range-selector>
+  </div>
+</lib-bottom-modal>
+<div
+  (click)="showBottomModal()"
+  class="absolute bottom-0 cursor-pointer z-10"
+  style="left: 50%"
+>
+  <img
+    style="transform: rotate(270deg)"
+    [src]="ICONS['rightArrow']"
+    alt="icon"
+    height="15"
+    width="15"
+  />
+</div>

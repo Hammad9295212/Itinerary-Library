@@ -1,0 +1,50 @@
+@use "../../../../_styles/colors" as *;
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  max-width: 60px;
+}
+
+.bottom-nav-image {
+  height: 16px;
+  width: 17px;
+}
+
+.bottom-nav-item {
+  span {
+    color: $text-color-3;
+    opacity: 0.3;
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+.bottom-nav-item {
+  .spanText:nth-child(3) {
+    background: red !important;
+    margin-top: 3px !important;
+  }
+}
+
+.dashboard-active.span-text {
+  background-image: linear-gradient(
+    208.61deg,
+    $scroll-color -5.8%,
+    $background-color-6 192.44%
+  ) !important;
+
+  /* Clip the gradient to the text */
+  -webkit-background-clip: text !important;
+  background-clip: text !important; /* Standard property for non-webkit browsers */
+
+  /* Make text color transparent to reveal the gradient */
+  color: transparent !important;
+
+  /* For better cross-browser support */
+  display: inline !important;
+  opacity: 100% !important;
+}

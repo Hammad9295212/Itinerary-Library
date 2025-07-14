@@ -1,0 +1,20 @@
+@use "../../_styles/colors" as *;
+@use "../../_styles/fonts" as *;
+
+.header-main-bar {
+  font-family: $header-font;
+
+  h4 {
+    font-size: 0.93rem !important;
+  }
+}
+
+.header-back-btn {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+::ng-deep .lib-popup-modal {
+  --background: transparent !important;
+  --box-shadow: none !important;
+}

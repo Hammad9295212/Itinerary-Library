@@ -1,0 +1,13 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div *ngIf="isLoading" class="loader">Loading...</div>
+    <img
+      [src]="data.imageUrl"
+      alt="Image"
+      class="modal-image"
+      (load)="onImageLoad()"
+      [class.hidden]="isLoading"
+    />
+    <button class="close-btn" (click)="close()">Close</button>
+  </div>
+</div>

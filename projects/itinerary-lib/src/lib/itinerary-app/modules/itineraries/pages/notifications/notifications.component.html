@@ -1,0 +1,11 @@
+<div class="z-auto">
+  <div class="pb-10">
+    <app-header heading="Notifications" (firstButton)="backButton()"></app-header>
+
+    <ng-container *ngFor="let n of notifications">
+      <app-notification-tile [content]="n.notification.notificationContent" [isBtnVisible]="n.needReview"
+        [notificationAttended]="n.notification.attended" btnText="Review Now"
+        (btnClick)="navToCommentApproval()"></app-notification-tile>
+    </ng-container>
+  </div>
+</div>

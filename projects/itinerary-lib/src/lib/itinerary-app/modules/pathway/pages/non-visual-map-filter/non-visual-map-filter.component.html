@@ -1,0 +1,45 @@
+<div class="pt-10 max-padd-container">
+  <app-map-header
+    [title]="'Create Itinerary'"
+    [backLink]="'/'"
+    [customcss]="''"
+  ></app-map-header>
+</div>
+<div class="mt-6">
+  <app-googlemap #map></app-googlemap>
+</div>
+<div class="absolute bottom-0 py-3">
+  <section class="fixed bottom-0 w-full">
+    <div class="tracking-widest px-5 py-6 rounded-t-xl drawer-shadow">
+      <div class="flex justify-between items-center">
+        <h1 class="no-visual-class xs:text-sm sm:text-md">No Visual Filters</h1>
+        <div
+          class="bg-grey rounded-full searchbar-shadow flex items-center justify-between"
+        >
+          <lib-primary-btn class="rounded-full p-2 px-4 focus:bg-primary">
+            <img [src]="ICONS['location']" alt="" />
+          </lib-primary-btn>
+
+          <lib-primary-btn
+            class="rounded-full p-2 px-4 focus:bg-primary"
+            (click)="toggleDrawingTool()"
+          >
+            <img [src]="ICONS['write']" alt="" />
+          </lib-primary-btn>
+          <lib-primary-btn class="rounded-full p-2 px-4 focus:bg-primary">
+            <img [src]="ICONS['warn']" alt="" />
+          </lib-primary-btn>
+        </div>
+      </div>
+      <div class="filter-class text-xs py-2 mt-2">
+        {{ "NO_VISUAL_FILTER" | translate }}
+      </div>
+    </div>
+
+    <div class="background-gradient py-5 px-16">
+      <lib-primary-btn class="">{{
+        "IMAGE_CROPPER.CONTINUE" | translate
+      }}</lib-primary-btn>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,22 @@
+@use "../../_styles/colors" as *;
+
+.header-back-btn .lib-button-component .mat-ripple {
+  background: $background-color-1 !important;
+  border: none !important;
+}
+
+.header-back-btn .lib-button-component .lib-button-container {
+  display: none !important;
+}
+
+.header-back-btn .lib-button-component {
+  border: none !important;
+}
+
+.header-back-btn .mat-ripple {
+  border: none !important;
+  background: $background-color-1;
+  box-shadow:
+    9.026px 8.205px 22.153px 2.051px rgba(17, 16, 20, 0.65),
+    -4.102px -4.102px 13.128px -2.462px rgba(203, 199, 209, 0.25) !important;
+}

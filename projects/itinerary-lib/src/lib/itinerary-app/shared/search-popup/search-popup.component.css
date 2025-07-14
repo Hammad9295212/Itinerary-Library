@@ -1,0 +1,45 @@
+.search-hero {
+  width: 70vw;
+  height: 100%;
+  border-radius: 40px;
+  border-width: 1px;
+  background-blend-mode: overlay;
+  border: 1px solid transparent;
+  backdrop-filter: blur(40px);
+  overflow: hidden;
+}
+
+.no-result {
+  padding-bottom: 30px;
+}
+
+::ng-deep .search-field .container {
+  height: 26px;
+}
+
+.divider {
+  border: 3.26px solid;
+  border-width: 3.26px;
+  border: 3.26px solid;
+
+  border-image-source: radial-gradient(
+    90% 43% at 50% 50%,
+    #f7f5df 1%,
+    rgba(247, 245, 221, 0) 100%
+  );
+
+  border-image-slice: 1;
+}
+
+.custom-text {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  color: rgba(168, 168, 168, 1);
+}
+
+.highlight-text {
+  background: rgba(254, 60, 114, 1) !important;
+  padding: 2px 1px !important;
+  border-radius: 10px !important;
+}
